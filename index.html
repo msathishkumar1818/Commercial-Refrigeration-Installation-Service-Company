@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precision Commercial Refrigeration & Cold Chain Systems | ArcticPro</title>
+  <meta name="description"
+    content="Precision commercial refrigeration installation, central chillers, walk-in freezers, supermarket racks, and IoT temperature compliance monitoring.">
+  <link rel="icon" type="image/png" href="assets/images/icons/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       BRANDED PAGE LOADER
+       ====================================================================== -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-brand-box">
+      <img src="assets/images/icons/logo.png" alt="ArcticPro Commercial Refrigeration" class="loader-logo">
+      <div class="loader-title">ArcticPro Refrigeration</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       FIXED SLIM HEADER (Single-Line Desktop Alignment)
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="brand-link" id="brandLink" aria-label="ArcticPro Home">
+        <img src="assets/images/icons/logo.png" alt="ArcticPro Commercial Refrigeration Logo" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-name">Arctic<span>Pro</span></span>
+          <span class="brand-sub">Refrigeration & Service</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (Exactly 6 Primary Nav Items) -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Click-only Dropdown) -->
+        <div class="nav-item" id="homeDropdownWrapper">
+          <button type="button" class="nav-dropdown-btn active" id="homeDropdownBtn" aria-haspopup="true"
+            aria-expanded="false" aria-label="Home menu">
+            <span>Home</span>
+            <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="homeDropdownMenu" role="menu">
+            <a href="index.html" class="dropdown-item active" role="menuitem">Home 1 (Installation)</a>
+            <a href="home-2.html" class="dropdown-item" role="menuitem">Home 2 (24/7 Service)</a>
+          </div>
+        </div>
+
+
+
+
+        <!-- 2. About -->
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </div>
+
+        <!-- 3. Services -->
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">Services</a>
+        </div>
+
+
+
+        <!-- 4. Compliance -->
+        <div class="nav-item">
+          <a href="compliance.html" class="nav-link">Compliance</a>
+        </div>
+
+
+
+        <!-- 5. Contact (Directly Visible) -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <!-- 6. Dashboard -->
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+        </div>
+
+      </nav>
+
+      <!-- Header Action Controls: RTL, Dark Mode, Direct Login -->
+      <div class="header-actions">
+        <!-- RTL Toggle -->
+        <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR"
+          title="Toggle RTL / LTR">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 8 16 13"></polyline>
+            <line x1="21" y1="8" x2="9" y2="8"></line>
+            <polyline points="8 21 3 16 8 11"></polyline>
+            <line x1="3" y1="16" x2="15" y2="16"></line>
+          </svg>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle dark mode"
+          title="Toggle Dark/Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Client Portal Login -->
+        <a href="login.html" class="control-btn" id="headerLoginBtn" aria-label="Client Portal Login"
+          title="Client Portal Login">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+        </a>
+
+        <!-- Commercial Refrigeration Service CTA Button (Visible on Desktop, Hidden on Mobile Header) -->
+        <a href="contact.html" class="btn-header-cta" id="headerCtaBtn" aria-label="Request Commercial Refrigeration Service">
+          <span class="cta-pulse-dot" aria-hidden="true"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+          <span>Request Service</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle Hamburger -->
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open mobile navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 22px; height: 22px;" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MOBILE DRAWER OVERLAY & MENU
+       ====================================================================== -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-link">
+        <img src="assets/images/icons/logo.png" alt="ArcticPro Logo" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-name">Arctic<span>Pro</span></span>
+          <span class="brand-sub">Refrigeration & Service</span>
+        </div>
+      </div>
+      <button type="button" class="control-btn" id="mobileDrawerClose" aria-label="Close navigation drawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Links -->
+    <ul class="mobile-nav-list">
+      <!-- Home Accordion (Click only) -->
+      <li class="mobile-accordion-item" id="mobileHomeAccordion">
+        <button type="button" class="mobile-nav-link active" id="mobileHomeAccordionBtn" aria-label="Toggle Home menu">
+          <span>Home</span>
+          <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="index.html" class="mobile-sub-link active">Home 1 (Installation)</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2 (24/7 Service)</a>
+        </div>
+      </li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+
+      <li><a href="compliance.html" class="mobile-nav-link">Compliance</a></li>
+
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+    </ul>
+
+    <!-- Mobile Drawer Controls & Bottom Actions (CTA Button at the Very Last) -->
+    <div class="mobile-drawer-footer">
+      <div class="mobile-controls-row">
+        <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Quick Settings</span>
+        <div style="display: flex; gap: 0.5rem;">
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle RTL mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 3 21 8 16 13"></polyline>
+              <line x1="21" y1="8" x2="9" y2="8"></line>
+              <polyline points="8 21 3 16 8 11"></polyline>
+              <line x1="3" y1="16" x2="15" y2="16"></line>
+            </svg>
+          </button>
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle dark mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Login Button -->
+      <a href="login.html" class="mobile-drawer-login-btn" id="mobileDrawerLoginBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" style="width: 18px; height: 18px;" aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>Client Portal Login</span>
+      </a>
+
+      <!-- Commercial CTA Button (Placed At the Very Last) -->
+      <a href="contact.html" class="btn-header-cta mobile-drawer-cta-btn" id="mobileDrawerCtaBtn">
+        <span class="cta-pulse-dot" aria-hidden="true"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+        </svg>
+        <span>Request Service &bull; 24/7 Dispatch</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       MAIN CONTENT: EXACTLY 6 MAIN CONTENT SECTIONS (HOME 1)
+       ====================================================================== -->
+  <main id="mainContent">
+
+    <!-- --------------------------------------------------------------------
+         SECTION 1: HERO - COMMERCIAL REFRIGERATION INSTALLATION & SERVICE
+         -------------------------------------------------------------------- -->
+    <section class="home1-hero" id="heroSection">
+      <div class="section-container">
+        <div class="hero-editorial-grid">
+
+          <!-- Column 1: Installation & Service Overview -->
+          <div>
+            <div class="eyebrow-badge">
+              <span class="telemetry-pulse"></span>
+              <span>Turnkey Installation &bull; 24/7 Service</span>
+            </div>
+            <h1 class="section-title">
+              Commercial Refrigeration <span class="hero-title-highlight">Installation &amp; 24/7 Emergency
+                Service</span>
+            </h1>
+            <p class="section-desc">
+              Turnkey installation, equipment replacement, preventive maintenance, and 24/7 emergency repair for
+              commercial walk-in coolers, reach-in freezers, supermarket multi-compressor racks, and cold storage
+              warehouses.
+            </p>
+
+            <div class="hero-actions-row">
+              <a href="services.html" class="btn-primary-action">
+                <span>Request Installation Quote</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="width: 18px; height: 18px;" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="tel:+18004822653" class="btn-secondary-action">
+                <span>Emergency Service: (800) 482-COLD</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="width: 18px; height: 18px;" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Service Strip -->
+            <div class="hero-telemetry-strip">
+              <div class="strip-item">
+                <span class="strip-val">&lt;45 MIN</span>
+                <span class="strip-lbl">Emergency Dispatch</span>
+              </div>
+              <div class="strip-item">
+                <span class="strip-val">100% OEM</span>
+                <span class="strip-lbl">Parts in Stock</span>
+              </div>
+              <div class="strip-item">
+                <span class="strip-val">EPA 608</span>
+                <span class="strip-lbl">Universal Master Techs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Visual Frame & Service Badge -->
+          <div class="hero-visual-frame">
+            <img src="assets/images/hero/p1.jpg"
+              alt="Commercial refrigeration chiller rack and compressor room installation" class="hero-main-img">
+            <div class="hero-service-badge-strip">
+              <div class="badge-strip-item">
+                <span class="telemetry-pulse"></span>
+                <span>Licensed Commercial HVAC/R Contractors</span>
+              </div>
+              <div class="badge-strip-sub">Turnkey Installation • 24/7 Service • Maintenance Contracts</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         SECTION 2: COMMERCIAL INSTALLATION SOLUTIONS
+         -------------------------------------------------------------------- -->
+    <section class="section-wrapper home1-mosaic" id="installationServices">
+      <div class="section-container">
+
+        <div class="mosaic-header-row">
+          <div>
+            <div class="eyebrow-badge">Turnkey Equipment Installation</div>
+            <h2 class="section-title">Commercial Refrigeration Installation &amp; Replacement</h2>
+          </div>
+          <p class="section-desc">
+            Complete mechanical installation, piping, and startup for supermarkets, commercial kitchens, grocery stores,
+            and food distribution warehouses.
+          </p>
+        </div>
+
+        <div class="mosaic-grid">
+
+          <!-- Large Feature Card: Supermarket Multi-Compressor Parallel Rack System -->
+          <div class="mosaic-feature-card">
+            <img src="assets/images/services/parallel-compressor-rack-install.jpg"
+              alt="Turnkey installation and commissioning of supermarket multi-compressor parallel rack systems by certified commercial technicians"
+              loading="lazy">
+            <div class="mosaic-card-gradient">
+              <span class="mosaic-tag">Supermarket Installation</span>
+              <h3 class="mosaic-card-title">Parallel Multi-Compressor Rack Systems</h3>
+              <p class="mosaic-card-sub">
+                Turnkey installation of multi-compressor supermarket racks, multi-deck open display cases, and reach-in
+                merchandisers engineered for energy efficiency and continuous uptime.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stack of 2 Panes -->
+          <div class="mosaic-stack">
+
+            <!-- Card 2: Walk-In Coolers & Blast Freezers -->
+            <div class="mosaic-stack-card">
+              <img src="assets/images/services/walkin-freezer-coldroom-install.jpg"
+                alt="Engineered commercial walk-in cooler and blast freezer box modular panel assembly installation"
+                loading="lazy">
+              <div class="mosaic-card-gradient">
+                <span class="mosaic-tag">Custom Cold Rooms</span>
+                <h3 class="mosaic-card-title">Walk-In Coolers &amp; Blast Freezers</h3>
+                <p class="mosaic-card-sub">Modular insulated panel assembly, heavy-duty doors, and matched condensing
+                  units for food service.</p>
+              </div>
+            </div>
+
+            <!-- Card 3: Central Condensing Units & Chillers -->
+            <div class="mosaic-stack-card">
+              <img src="assets/images/services/rooftop-condenser-chiller-install.jpg"
+                alt="Commercial high-efficiency rooftop condensing unit and industrial process chiller system installation"
+                loading="lazy">
+              <div class="mosaic-card-gradient">
+                <span class="mosaic-tag">Condensers &amp; Chillers</span>
+                <h3 class="mosaic-card-title">Central Condensing Units &amp; Chillers</h3>
+                <p class="mosaic-card-sub">High-efficiency rooftop condensing units and process chillers installed with
+                  full factory warranties.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         SECTION 3: ON-SITE DIAGNOSTICS & REPAIR SERVICES
+         -------------------------------------------------------------------- -->
+    <section class="section-wrapper home1-telemetry" id="repairServices">
+      <div class="section-container">
+
+        <div class="section-title-wrap text-center" style="margin-bottom: 2.5rem;">
+          <div class="eyebrow-badge">
+            <span class="telemetry-pulse"></span>
+            <span>Commercial Repair Capabilities</span>
+          </div>
+          <h2 class="section-title" style="margin-top: 0.5rem;">On-Site Commercial Refrigeration Repair &amp;
+            Troubleshooting</h2>
+        </div>
+
+        <!-- 4 Repair Service Cards -->
+        <div class="telemetry-quad-gallery-grid">
+
+          <!-- Image 1 -->
+          <div class="telemetry-pure-card">
+            <img src="assets/images/sections/p5.jpg" alt="Commercial compressor replacement and rebuild" width="600"
+              height="420" loading="lazy">
+            <div class="telemetry-pure-overlay">
+              <span class="telemetry-pure-title">Compressor Rebuilds &amp; Replacement</span>
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="telemetry-pure-card">
+            <img src="assets/images/sections/p20.jpg" alt="Walk-in cooler defrost and temperature restoration"
+              width="600" height="420" loading="lazy">
+            <div class="telemetry-pure-overlay">
+              <span class="telemetry-pure-title">Evaporator Coils &amp; Defrost Repair</span>
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="telemetry-pure-card">
+            <img src="assets/images/compliance/p21.jpg" alt="Refrigerant leak detection and recovery" width="600"
+              height="420" loading="lazy">
+            <div class="telemetry-pure-overlay">
+              <span class="telemetry-pure-title">Refrigerant Leak Detection &amp; EPA Recharge</span>
+            </div>
+          </div>
+
+          <!-- Image 4 -->
+          <div class="telemetry-pure-card">
+            <img src="assets/images/compliance/p22.jpg" alt="Digital thermostat and microprocessor controls" width="600"
+              height="420" loading="lazy">
+            <div class="telemetry-pure-overlay">
+              <span class="telemetry-pure-title">Electrical Controls &amp; Thermostats</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         SECTION 4: COLD STORAGE WAREHOUSE INSTALLATION & SERVICE
+         -------------------------------------------------------------------- -->
+    <section class="section-wrapper home1-facility" id="logisticsFacility">
+      <div class="section-container">
+        <div class="cinematic-facility-box">
+          <img src="assets/images/gallery/p6.jpg"
+            alt="Commercial cold storage distribution center walk-in refrigeration installation">
+
+          <div class="cinematic-facility-overlay">
+            <span class="mosaic-tag" style="background: var(--brand-blue);">Large Facilities</span>
+            <h2 class="facility-overlay-title">Cold Storage Warehouses &amp; Distribution Centers</h2>
+            <p class="facility-overlay-desc">
+              From 10,000 to 1,000,000+ cu. ft. facilities. We engineer, install, and service commercial cold storage
+              envelopes, variable-speed air handlers, and multi-evaporator systems backed by round-the-clock maintenance
+              contracts.
+            </p>
+
+            <div class="facility-specs-row">
+              <div class="spec-item-box">
+                <span class="spec-number">1.2M+</span>
+                <span class="spec-title">Cubic Feet Installed</span>
+              </div>
+              <div class="spec-item-box">
+                <span class="spec-number">&lt;45 MIN</span>
+                <span class="spec-title">Emergency Response</span>
+              </div>
+              <div class="spec-item-box">
+                <span class="spec-number">100% OEM</span>
+                <span class="spec-title">Warranty Guaranteed</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         SECTION 5: 24/7 RAPID EMERGENCY RESPONSE FLEET
+         -------------------------------------------------------------------- -->
+    <section class="section-wrapper home1-dispatch" id="fleetOperations">
+      <div class="section-container">
+        <div class="dispatch-grid">
+
+          <!-- Column 1: Service Capabilities -->
+          <div>
+            <div class="eyebrow-badge">24/7 Emergency Dispatch</div>
+            <h2 class="section-title">Emergency Commercial Refrigeration Repair Units</h2>
+            <p class="section-desc">
+              Refrigeration failure in commercial cold storage causes tens of thousands in perishable food spoilage
+              within hours. Our mobile units arrive on-site fully stocked with OEM replacement parts to restore cooling
+              fast.
+            </p>
+
+            <div class="dispatch-service-list">
+
+              <div class="dispatch-list-item">
+                <div class="dispatch-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="width: 20px; height: 20px;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="dispatch-item-title">&lt;45 Minute Emergency Dispatch</h3>
+                  <p class="dispatch-item-desc">GPS-routed specialized service vehicles with dedicated night, weekend,
+                    and holiday emergency crews.</p>
+                </div>
+              </div>
+
+              <div class="dispatch-list-item">
+                <div class="dispatch-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="width: 20px; height: 20px;">
+                    <path
+                      d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                    </path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="dispatch-item-title">Fully Stocked OEM Components On Board</h3>
+                  <p class="dispatch-item-desc">Semi-hermetic compressors, TXVs, fan motors, contactors, and certified
+                    refrigerants on truck.</p>
+                </div>
+              </div>
+
+              <div class="dispatch-list-item">
+                <div class="dispatch-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="width: 20px; height: 20px;">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="dispatch-item-title">EPA 608 Universal Master Technicians</h3>
+                  <p class="dispatch-item-desc">Licensed commercial mechanics certified for complex supermarket racks,
+                    chillers, and walk-ins.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Column 2: Image Frame -->
+          <div class="dispatch-img-frame">
+            <img src="assets/images/sections/p7.jpg"
+              alt="ArcticPro commercial refrigeration emergency dispatch vehicle and master technician">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         SECTION 6: CTA - SERVICE CALL & INSTALLATION QUOTE
+         -------------------------------------------------------------------- -->
+    <section class="home1-cta" id="ctaSection">
+      <div class="section-container">
+        <div class="cta-technical-banner">
+          <div class="cta-banner-content">
+            <div class="eyebrow-badge"
+              style="background: rgba(220, 38, 38, 0.2); border-color: rgba(220, 38, 38, 0.4); color: #fca5a5;">
+              <span class="telemetry-pulse" style="background-color: #ef4444; box-shadow: 0 0 8px #ef4444;"></span>
+              <span>24/7 Refrigeration Dispatch</span>
+            </div>
+            <h2 class="cta-banner-title">
+              Protect Your Perishable Inventory With ArcticPro Commercial Refrigeration
+            </h2>
+            <p class="cta-banner-desc">
+              Whether you need urgent emergency cooling repair, a preventive maintenance agreement, or a quote for a new
+              commercial installation, our master technicians are ready 24/7.
+            </p>
+
+            <div class="cta-btn-group">
+              <a href="tel:+18004822653" class="btn-emergency-call" id="ctaEmergencyCallBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="width: 18px; height: 18px;" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>Call Emergency Dispatch: (800) 482-COLD</span>
+              </a>
+
+              <a href="contact.html" class="btn-secondary-action" id="ctaScheduleBtn">
+                <span>Request Installation Estimate</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="width: 18px; height: 18px;" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       SHARED FOOTER (Editorial & Technical Precision)
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+
+        <!-- Brand & Description -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-link">
+            <img src="assets/images/icons/logo.png" alt="ArcticPro Logo" class="brand-logo-img">
+            <div class="brand-text-wrap">
+              <span class="brand-name" style="color: #ffffff;">Arctic<span
+                  style="color: var(--brand-blue);">Pro</span></span>
+              <span class="brand-sub" style="color: #94a3b8;">Commercial Refrigeration</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Commercial walk-in coolers, reach-in freezers, supermarket racks, and IoT temperature compliance monitoring
+            engineered for zero downtime.
+          </p>
+          <div class="footer-telemetry-badge">
+            <span class="telemetry-pulse"></span>
+            <span>24/7 DISPATCH READY: ACTIVE</span>
+          </div>
+          <div class="footer-social-links" aria-label="ArcticPro Social Channels">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="X (formerly Twitter)" title="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM9.75 15.02V8.98L15 12l-5.25 3.02z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h2 class="footer-heading">Navigation</h2>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home 1 (Installation)</a></li>
+            <li><a href="home-2.html">Home 2 (24/7 Service)</a></li>
+            <li><a href="services.html">Services & Installation</a></li>
+            <li><a href="about.html">About ArcticPro</a></li>
+            <li><a href="compliance.html">Compliance Monitoring</a></li>
+            <li><a href="contact.html">Emergency Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Solutions -->
+        <div>
+          <h2 class="footer-heading">Solutions</h2>
+          <ul class="footer-nav-list">
+            <li><a href="services.html#installation">Commercial Installation</a></li>
+            <li><a href="services.html#repair">Refrigeration System Repair</a></li>
+            <li><a href="services.html#maintenance">Preventive Maintenance</a></li>
+            <li><a href="services.html#cold-rooms">Cold Rooms &amp; Freezers</a></li>
+            <li><a href="services.html#compliance">Temperature Monitoring</a></li>
+            <li><a href="services.html#emergency">24/7 Emergency Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Emergency Dispatch -->
+        <div>
+          <h2 class="footer-heading">Emergency Hotline</h2>
+          <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+1 (800) 482-COLD</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>dispatch@arcticpro-refrig.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>440 Commerce Parkway, Sector 9</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <span>&copy; 2026 ArcticPro Commercial Refrigeration Inc. All rights reserved.</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="compliance.html">HACCP &amp; EPA Compliance</a>
+          <span class="footer-link-divider" aria-hidden="true">&bull;</span>
+          <a href="contact.html">Privacy &amp; Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       SCROLL TO TOP BUTTON
+       ====================================================================== -->
+  <button type="button" id="scroll-to-top" aria-label="Scroll to top of page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round" style="width: 20px; height: 20px;" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- SHARED JAVASCRIPT -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal Dashboard | ArcticPro Commercial Refrigeration</title>
+  <meta name="description"
+    content="ArcticPro Client Telemetry & Service Portal. Schedule maintenance visits, track active service tickets, and inspect continuous IoT temperature compliance logs.">
+  <link rel="icon" type="image/png" href="assets/images/icons/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       BRANDED PAGE LOADER
+       ====================================================================== -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-brand-box">
+      <img src="assets/images/icons/logo.png" alt="ArcticPro Commercial Refrigeration" class="loader-logo">
+      <div class="loader-title">ArcticPro Client Portal</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       DASHBOARD HEADER BAR
+       ====================================================================== -->
+  <header class="dash-header" id="dashHeader">
+    <div class="dash-header-inner">
+
+      <div class="dash-header-left">
+        <button type="button" class="dash-sidebar-toggle" id="dashSidebarToggle" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-link" aria-label="ArcticPro Home">
+          <img src="assets/images/icons/logo.png" alt="ArcticPro Logo" class="brand-logo-img">
+          <div class="brand-text-wrap">
+            <span class="brand-name">Arctic<span>Pro</span></span>
+            <span class="brand-sub">Client Portal</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="dash-header-actions">
+        <!-- Live Telemetry Status -->
+        <div class="dash-live-badge">
+          <span class="telemetry-pulse"></span>
+          <span>SYSTEMS NORMAL &bull; LIVE</span>
+        </div>
+
+        <!-- Logout Action -->
+        <a href="login.html" class="dash-logout-btn" id="logoutBtn" title="Log out from ArcticPro Portal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span class="dash-logout-text">Log Out</span>
+        </a>
+
+        <!-- RTL Toggle -->
+        <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR"
+          title="Toggle RTL/LTR">
+          <span style="font-size: 0.75rem; font-weight: 800;">RTL</span>
+        </button>
+
+        <!-- Dark / Light Mode Toggle -->
+        <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle color theme"
+          title="Toggle Dark/Light Mode">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar Overlay Backdrop -->
+  <div class="dash-sidebar-overlay" id="dashSidebarOverlay" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       DASHBOARD APP LAYOUT
+       ====================================================================== -->
+  <div class="dash-app-layout">
+
+    <!-- Sidebar Navigation -->
+    <aside class="dash-sidebar" id="dashSidebar" aria-label="Portal Navigation">
+      <div class="dash-sidebar-nav">
+
+        <button type="button" class="dash-nav-link active" data-tab="overviewTab">
+          <span class="dash-nav-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview</span>
+          </span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-tab="scheduleTab">
+          <span class="dash-nav-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Schedule Visit</span>
+          </span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-tab="ticketsTab">
+          <span class="dash-nav-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span>Service Tickets</span>
+          </span>
+          <span class="dash-nav-badge">3</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-tab="complianceTab">
+          <span class="dash-nav-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Compliance Logs</span>
+          </span>
+          <span class="dash-nav-badge">3</span>
+        </button>
+
+        <button type="button" class="dash-nav-link" data-tab="equipmentTab">
+          <span class="dash-nav-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+              </path>
+            </svg>
+            <span>Chambers &amp; Racks</span>
+          </span>
+        </button>
+
+        <a href="index.html" class="dash-nav-link">
+          <span class="dash-nav-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Public Website</span>
+          </span>
+        </a>
+
+      </div>
+
+      <!-- Facility Profile Status Card -->
+      <div class="dash-sidebar-footer">
+        <div class="client-status-card">
+          <div class="client-status-label">Client Facility</div>
+          <div class="client-status-facility">FreshWay Supermarket HQ</div>
+          <div class="client-status-tag">
+            <span class="telemetry-pulse"></span>
+            <span>24/7 Active Monitoring</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="dash-main-content">
+
+      <!-- ==================================================================
+           TAB PANEL 1: OVERVIEW (Matching User Reference Image)
+           ================================================================== -->
+      <div class="dash-panel active" id="overviewTab">
+
+        <!-- Greeting Banner (Exactly like Hello, Rohit banner) -->
+        <div class="dash-welcome-banner">
+          <div class="dash-welcome-left">
+            <h1 class="dash-welcome-title">Hello, Rohit</h1>
+            <div class="dash-welcome-sub">
+              <span>FreshWay Supermarket Group &bull; Facility ID: AP-CR-9042</span>
+              <span>&bull; Lead Engineer: Daniel Mathew</span>
+            </div>
+          </div>
+          <div class="dash-welcome-action">
+            <button type="button" class="btn-primary-action" id="openScheduleModalBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>Schedule Service Visit</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Section Title & Description -->
+        <div class="dash-section-header">
+          <h2 class="dash-section-title">Overview</h2>
+          <p class="dash-section-desc">Everything open on your refrigeration facility account right now.</p>
+        </div>
+
+        <!-- 4-Stat Metric Card Grid (Reference image: 3 | 3 | 1,750 | 3) -->
+        <div class="dash-kpi-grid">
+
+          <div class="kpi-card">
+            <div class="kpi-label">Active Tickets</div>
+            <div class="kpi-val" style="color: #38bdf8;">3</div>
+            <div class="kpi-sub">Waiting for review or on-site dispatch</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Scheduled Visits</div>
+            <div class="kpi-val" style="color: #f59e0b;">3</div>
+            <div class="kpi-sub">Upcoming preventive inspections</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Sensors Monitored</div>
+            <div class="kpi-val" style="color: #22c55e;">1,750</div>
+            <div class="kpi-sub">Across 18 walk-ins &amp; display cases</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Compliance Reports</div>
+            <div class="kpi-val" style="color: #a855f7;">3</div>
+            <div class="kpi-sub">HACCP &amp; EPA audit ready to download</div>
+          </div>
+
+        </div>
+
+        <!-- Overview Content Split Grid -->
+        <div class="dash-content-grid">
+
+          <!-- Column 1: Active Service Tickets & Work Orders -->
+          <div>
+            <div class="dash-card-widget">
+              <div class="widget-header-row">
+                <h3 class="widget-title">Active Service Tickets</h3>
+                <a class="widget-link" data-tab-switch="ticketsTab">View all tickets &rarr;</a>
+              </div>
+
+              <!-- Ticket 1: Active In Inspection -->
+              <div class="job-item-card">
+                <div class="job-header">
+                  <div class="job-header-top">
+                    <span class="job-code">WO-26-8814 &bull; PO-99210 &bull; FreshWay Superstore</span>
+                    <span class="job-status-pill status-active">INSPECTION</span>
+                  </div>
+                  <h4 class="job-title">Parallel Rack B &bull; Low-Temp Compressor Valve</h4>
+                </div>
+
+                <!-- 4-Stage Stepper (From Reference Image) -->
+                <div class="stage-stepper">
+                  <div class="stepper-bars">
+                    <div class="stepper-bar-seg done"></div>
+                    <div class="stepper-bar-seg done"></div>
+                    <div class="stepper-bar-seg done"></div>
+                    <div class="stepper-bar-seg in-progress"></div>
+                  </div>
+                  <div class="stepper-labels">
+                    <span class="done-step">Dispatched</span>
+                    <span class="done-step">Diagnostics</span>
+                    <span class="done-step">Fitment</span>
+                    <span class="active-step">Inspection</span>
+                  </div>
+                </div>
+
+                <div class="job-meta-row">
+                  <div>Assigned: <strong>Daniel Mathew (Master Tech)</strong></div>
+                  <div>Refrigerant: <strong>R-448A Eco-Blend</strong></div>
+                  <div>Scheduled: <strong>11 Oct 2026</strong></div>
+                </div>
+              </div>
+
+              <!-- Ticket 2: Scheduled Preventive Audit -->
+              <div class="job-item-card">
+                <div class="job-header">
+                  <div class="job-header-top">
+                    <span class="job-code">WO-26-8819 &bull; PO-99245 &bull; Store #402</span>
+                    <span class="job-status-pill status-scheduled">SCHEDULED</span>
+                  </div>
+                  <h4 class="job-title">Dairy &amp; Deli Reach-In Defrost Calibration</h4>
+                </div>
+
+                <div class="stage-stepper">
+                  <div class="stepper-bars">
+                    <div class="stepper-bar-seg done"></div>
+                    <div class="stepper-bar-seg in-progress"></div>
+                    <div class="stepper-bar-seg"></div>
+                    <div class="stepper-bar-seg"></div>
+                  </div>
+                  <div class="stepper-labels">
+                    <span class="done-step">Scheduled</span>
+                    <span class="active-step"> Checklist</span>
+                    <span>On-Site</span>
+                    <span>Sign-off</span>
+                  </div>
+                </div>
+
+                <div class="job-meta-row">
+                  <div>Assigned: <strong>Marcus Vance (EPA 608)</strong></div>
+                  <div>System: <strong>Display Merchandiser Banks</strong></div>
+                  <div>Scheduled: <strong>14 Oct 2026</strong></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Real-Time Chamber Telemetry Preview -->
+            <div class="dash-card-widget">
+              <div class="widget-header-row">
+                <h3 class="widget-title">Live Commercial Chamber Telemetry</h3>
+                <a class="widget-link" data-tab-switch="complianceTab">View compliance logs &rarr;</a>
+              </div>
+
+              <div class="telemetry-chambers-grid">
+
+                <div class="chamber-telemetry-card">
+                  <div class="chamber-top">
+                    <span class="chamber-name">Walk-In Cooler A</span>
+                    <span class="chamber-badge optimal">NORMAL</span>
+                  </div>
+                  <div class="chamber-temp" style="color: #38bdf8;">+2.4&deg;C</div>
+                  <div class="chamber-setpoint">Target: 0&deg;C to +4&deg;C &bull; Meat &amp; Produce</div>
+                </div>
+
+                <div class="chamber-telemetry-card">
+                  <div class="chamber-top">
+                    <span class="chamber-name">Walk-In Freezer B</span>
+                    <span class="chamber-badge optimal">NORMAL</span>
+                  </div>
+                  <div class="chamber-temp" style="color: #22c55e;">-21.8&deg;C</div>
+                  <div class="chamber-setpoint">Target: -24&deg;C to -18&deg;C &bull; Deep Frozen</div>
+                </div>
+
+                <div class="chamber-telemetry-card">
+                  <div class="chamber-top">
+                    <span class="chamber-name">Produce Merchandiser</span>
+                    <span class="chamber-badge optimal">NORMAL</span>
+                  </div>
+                  <div class="chamber-temp" style="color: #f59e0b;">+5.1&deg;C</div>
+                  <div class="chamber-setpoint">Target: +4&deg;C to +7&deg;C &bull; Open Retail Air</div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Next Visit & Jobs by Stage (Reference Image Right Column) -->
+          <div>
+
+            <!-- Next Dispatch Card -->
+            <div class="dash-card-widget">
+              <div class="widget-header-row">
+                <h3 class="widget-title">Next Scheduled Visit</h3>
+              </div>
+
+              <div class="next-visit-box">
+                <div class="calendar-date-badge">
+                  <span class="cal-day">11</span>
+                  <span class="cal-month">Oct</span>
+                </div>
+                <div>
+                  <h4 class="visit-info-title">Compressor Rack B Calibration</h4>
+                  <p class="visit-info-desc">Master Engineer Daniel Mathew &bull; 09:00 AM on-site arrival</p>
+                </div>
+              </div>
+
+              <div class="next-visit-box" style="margin-bottom: 0;">
+                <div class="calendar-date-badge">
+                  <span class="cal-day">14</span>
+                  <span class="cal-month">Oct</span>
+                </div>
+                <div>
+                  <h4 class="visit-info-title">HACCP Quarterly Sensor Check</h4>
+                  <p class="visit-info-desc">1,750 probe calibrations &amp; FDA 21 CFR log validation</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Jobs by Stage Distribution -->
+            <div class="dash-card-widget">
+              <div class="widget-header-row">
+                <h3 class="widget-title">Tickets by Status</h3>
+              </div>
+
+              <div class="stage-item">
+                <div class="stage-item-top">
+                  <span>In Diagnostic / Inspection</span>
+                  <strong>1 Ticket (33%)</strong>
+                </div>
+                <div class="stage-item-bar">
+                  <div class="stage-item-fill" style="width: 33%; background-color: #38bdf8;"></div>
+                </div>
+              </div>
+
+              <div class="stage-item">
+                <div class="stage-item-top">
+                  <span>Scheduled Maintenance</span>
+                  <strong>2 Tickets (67%)</strong>
+                </div>
+                <div class="stage-item-bar">
+                  <div class="stage-item-fill" style="width: 67%; background-color: #ea580c;"></div>
+                </div>
+              </div>
+
+              <div class="stage-item">
+                <div class="stage-item-top">
+                  <span>Sign-off &amp; Closed (This Month)</span>
+                  <strong>14 Tickets (100%)</strong>
+                </div>
+                <div class="stage-item-bar">
+                  <div class="stage-item-fill" style="width: 100%; background-color: #22c55e;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Emergency Hotline Card -->
+            <div class="dash-card-widget" style="border-left: 3px solid var(--brand-crimson);">
+              <div class="widget-title" style="margin-bottom: 0.5rem; color: #ef4444;">24/7 Refrigeration Dispatch</div>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+                Immediate priority triage for temperature alarms, refrigerant leaks, or rack trip failures.
+              </p>
+              <a href="tel:18004822653" class="btn-primary-action"
+                style="width: 100%; justify-content: center; background-color: var(--brand-crimson); font-size: 0.85rem; padding: 0.65rem 1rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>Call 1-800-482-COLD</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ==================================================================
+           TAB PANEL 2: SCHEDULE VISIT
+           ================================================================== -->
+      <div class="dash-panel" id="scheduleTab">
+        <div class="dash-section-header">
+          <h2 class="dash-section-title">Schedule Maintenance Visit</h2>
+          <p class="dash-section-desc">Book certified commercial refrigeration technicians for routine tune-ups or
+            scheduled repairs.</p>
+        </div>
+
+        <div class="dash-card-widget" style="max-width: 780px;">
+          <form id="scheduleVisitForm">
+            <div class="form-row-duo">
+              <div class="form-field">
+                <label for="schedFacility" class="form-label">Client Facility</label>
+                <input type="text" id="schedFacility" class="form-input" value="FreshWay Supermarket HQ - Dallas"
+                  readonly>
+              </div>
+              <div class="form-field">
+                <label for="schedSystem" class="form-label">System Type</label>
+                <select id="schedSystem" class="form-select" required>
+                  <option value="supermarket-rack">Supermarket Parallel Compressor Rack</option>
+                  <option value="walk-in-cooler">Walk-In Cold Storage Cooler</option>
+                  <option value="walk-in-freezer">Walk-In Commercial Deep Freezer</option>
+                  <option value="display-cases">Retail Glass Merchandiser Cases</option>
+                  <option value="iot-telemetry">IoT Temperature Probe Array</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row-duo">
+              <div class="form-field">
+                <label for="schedDate" class="form-label">Preferred Date</label>
+                <input type="date" id="schedDate" class="form-input" required>
+              </div>
+              <div class="form-field">
+                <label for="schedTime" class="form-label">Preferred Window</label>
+                <select id="schedTime" class="form-select" required>
+                  <option value="morning">Morning (08:00 AM - 12:00 PM)</option>
+                  <option value="afternoon">Afternoon (12:00 PM - 04:00 PM)</option>
+                  <option value="evening">After Hours / Night (08:00 PM - 02:00 AM)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="schedNotes" class="form-label">Service Request Details &amp; Scope</label>
+              <textarea id="schedNotes" class="form-textarea" rows="4"
+                placeholder="Detail any oil level checks, coil wash requirements, pressure alarms, or scheduled filter replacements..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary-action" id="submitScheduleBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Confirm &amp; Book Maintenance Visit</span>
+            </button>
+
+            <div id="schedSuccessMsg" class="form-alert-success" style="display: none; margin-top: 1.25rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Visit Successfully Scheduled! A confirmation email and assigned technician profile has been
+                dispatched.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           TAB PANEL 3: SERVICE TICKETS
+           ================================================================== -->
+      <div class="dash-panel" id="ticketsTab">
+        <div class="dash-section-header">
+          <h2 class="dash-section-title">Service Ticket Tracking</h2>
+          <p class="dash-section-desc">Track real-time engineering work orders, parts procurement, and technician
+            sign-offs.</p>
+        </div>
+
+        <div class="dash-card-widget">
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Ticket ID</th>
+                  <th>System Target</th>
+                  <th>Priority</th>
+                  <th>Assigned Tech</th>
+                  <th>Status</th>
+                  <th>Date Logged</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>WO-26-8814</strong></td>
+                  <td>Compressor Rack B &bull; Valve Rebuild</td>
+                  <td><span class="job-status-pill status-active">Level 1 Urgent</span></td>
+                  <td>Daniel Mathew (Master Tech)</td>
+                  <td><span class="job-status-pill status-active">In Inspection</span></td>
+                  <td>08 Oct 2026</td>
+                  <td><a class="widget-link">View Notes</a></td>
+                </tr>
+                <tr>
+                  <td><strong>WO-26-8819</strong></td>
+                  <td>Dairy &amp; Deli Defrost Micro-Timer</td>
+                  <td><span class="job-status-pill status-scheduled">Level 2 Routine</span></td>
+                  <td>Marcus Vance (EPA 608)</td>
+                  <td><span class="job-status-pill status-scheduled">Scheduled (14 Oct)</span></td>
+                  <td>06 Oct 2026</td>
+                  <td><a class="widget-link">View Notes</a></td>
+                </tr>
+                <tr>
+                  <td><strong>WO-26-8790</strong></td>
+                  <td>Walk-in Freezer Door Thermal Gasket</td>
+                  <td><span class="job-status-pill status-scheduled">Level 3 Routine</span></td>
+                  <td>Elena Rostova (Lead Field Eng)</td>
+                  <td><span class="job-status-pill status-scheduled">Scheduled (18 Oct)</span></td>
+                  <td>04 Oct 2026</td>
+                  <td><a class="widget-link">View Notes</a></td>
+                </tr>
+                <tr>
+                  <td><strong>WO-26-8652</strong></td>
+                  <td>R-448A Leak Sniffer Array Calibration</td>
+                  <td><span class="job-status-pill status-completed">Completed</span></td>
+                  <td>Daniel Mathew</td>
+                  <td><span class="job-status-pill status-completed">Closed &amp; Signed</span></td>
+                  <td>28 Sep 2026</td>
+                  <td><a class="widget-link">Download Cert</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           TAB PANEL 4: COMPLIANCE LOGS
+           ================================================================== -->
+      <div class="dash-panel" id="complianceTab">
+        <div class="dash-section-header">
+          <h2 class="dash-section-title">Temperature &amp; HACCP Compliance Logs</h2>
+          <p class="dash-section-desc">FDA 21 CFR Part 11 encrypted audit trail and NIST-traceable sensor readings.</p>
+        </div>
+
+        <div class="dash-card-widget">
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Chamber Zone</th>
+                  <th>Current Temp</th>
+                  <th>Mandated Range</th>
+                  <th>Excursion Status</th>
+                  <th>Audit Readiness</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>08 Oct 2026, 19:30</strong></td>
+                  <td>Walk-In Cooler A (Produce)</td>
+                  <td><strong style="color: #38bdf8;">+2.4&deg;C</strong></td>
+                  <td>0.0&deg;C to +4.0&deg;C</td>
+                  <td><span class="chamber-badge optimal">0 Excursions</span></td>
+                  <td><span class="job-status-pill status-completed">FDA Validated</span></td>
+                </tr>
+                <tr>
+                  <td><strong>08 Oct 2026, 19:30</strong></td>
+                  <td>Walk-In Freezer B (Meat Storage)</td>
+                  <td><strong style="color: #22c55e;">-21.8&deg;C</strong></td>
+                  <td>-24.0&deg;C to -18.0&deg;C</td>
+                  <td><span class="chamber-badge optimal">0 Excursions</span></td>
+                  <td><span class="job-status-pill status-completed">USDA Certified</span></td>
+                </tr>
+                <tr>
+                  <td><strong>08 Oct 2026, 19:30</strong></td>
+                  <td>Retail Dairy Glass Merchandiser</td>
+                  <td><strong style="color: #38bdf8;">+3.1&deg;C</strong></td>
+                  <td>+1.0&deg;C to +4.5&deg;C</td>
+                  <td><span class="chamber-badge optimal">0 Excursions</span></td>
+                  <td><span class="job-status-pill status-completed">HACCP CCP-1</span></td>
+                </tr>
+                <tr>
+                  <td><strong>08 Oct 2026, 19:30</strong></td>
+                  <td>Deli Pre-Pack Multideck</td>
+                  <td><strong style="color: #f59e0b;">+5.1&deg;C</strong></td>
+                  <td>+2.0&deg;C to +6.0&deg;C</td>
+                  <td><span class="chamber-badge optimal">0 Excursions</span></td>
+                  <td><span class="job-status-pill status-completed">HACCP CCP-1</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           TAB PANEL 5: CHAMBERS & RACKS
+           ================================================================== -->
+      <div class="dash-panel" id="equipmentTab">
+        <div class="dash-section-header">
+          <h2 class="dash-section-title">Commercial Refrigeration Equipment Assets</h2>
+          <p class="dash-section-desc">Asset register of installed commercial rack compressors, condensers, and display
+            cases.</p>
+        </div>
+
+        <div class="dash-content-grid">
+          <div class="dash-card-widget">
+            <h3 class="widget-title" style="margin-bottom: 1rem;">Asset Inventory</h3>
+            <div class="job-item-card">
+              <h4 class="job-title">Parallel Rack 01 &bull; Medium Temp Copeland Scroll</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0;">Installed: 2024 &bull;
+                Refrigerant: R-448A (180 lbs) &bull; Capacity: 125,000 BTU/h</p>
+              <div class="job-meta-row">
+                <span>Preventive Cycle: <strong>Every 90 Days</strong></span>
+                <span class="job-status-pill status-completed">Health 98%</span>
+              </div>
+            </div>
+            <div class="job-item-card">
+              <h4 class="job-title">Parallel Rack 02 &bull; Low Temp Bitzer Semi-Hermetic</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.35rem 0;">Installed: 2023 &bull;
+                Refrigerant: CO2 Transcritical &bull; Capacity: 95,000 BTU/h</p>
+              <div class="job-meta-row">
+                <span>Preventive Cycle: <strong>Every 60 Days</strong></span>
+                <span class="job-status-pill status-active">Health 94%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card-widget">
+            <h3 class="widget-title" style="margin-bottom: 1rem;">Refrigerant Leak Log (EPA 608)</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Federal clean air compliance
+              mandate requires continuous tracking of commercial refrigerant charges.</p>
+            <div class="stage-item">
+              <div class="stage-item-top">
+                <span>Calculated Rolling Annual Leak Rate</span>
+                <strong style="color: #22c55e;">1.4% (Threshold 20%)</strong>
+              </div>
+              <div class="stage-item-bar">
+                <div class="stage-item-fill" style="width: 7%; background-color: #22c55e;"></div>
+              </div>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem;">Status: Fully Compliant with
+              EPA Section 608 Tier 1 standard.</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ======================================================================
+       POPUP MODAL: SCHEDULE VISIT FORM
+       ====================================================================== -->
+  <div class="dash-modal-backdrop" id="scheduleModalBackdrop" aria-hidden="true">
+    <div class="dash-modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">Quick Schedule Maintenance Visit</h3>
+        <button type="button" class="modal-close-btn" id="closeScheduleModalBtn" aria-label="Close booking modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <form id="quickScheduleForm">
+        <div class="form-field">
+          <label for="modalSystem" class="form-label">System Target</label>
+          <select id="modalSystem" class="form-select" required>
+            <option value="rack">Supermarket Compressor Rack A / B</option>
+            <option value="walkin">Commercial Walk-in Cooler / Freezer</option>
+            <option value="cases">Display Merchandiser Case Line</option>
+          </select>
+        </div>
+        <div class="form-row-duo">
+          <div class="form-field">
+            <label for="modalDate" class="form-label">Date</label>
+            <input type="date" id="modalDate" class="form-input" required>
+          </div>
+          <div class="form-field">
+            <label for="modalUrgency" class="form-label">Type</label>
+            <select id="modalUrgency" class="form-select" required>
+              <option value="routine">Routine PM Inspection</option>
+              <option value="filter">Filter &amp; Coil Service</option>
+              <option value="sensor">Sensor Calibration</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-modal-submit" id="submitScheduleBtn">
+          <span>Submit Request to Dispatch</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Standard Master JS Engine -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal Login | ArcticPro Commercial Refrigeration</title>
+  <meta name="description"
+    content="Secure client portal login for ArcticPro commercial refrigeration facilities. Access live temperature compliance telemetry, schedule maintenance, and track work orders.">
+  <link rel="icon" type="image/png" href="assets/images/icons/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-body);">
+
+  <!-- Fixed Top Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-link" id="brandLink" aria-label="ArcticPro Home">
+        <img src="assets/images/icons/logo.png" alt="ArcticPro Commercial Refrigeration Logo" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-name">Arctic<span>Pro</span></span>
+          <span class="brand-sub">Client Telemetry Portal</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR" title="Toggle RTL/LTR">
+          <span style="font-size: 0.75rem; font-weight: 800;">RTL</span>
+        </button>
+        <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle color theme" title="Toggle Dark/Light Mode">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <a href="index.html" class="btn-primary-action" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          <span>Back to Site</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login & Registration Container -->
+  <main class="section-container" style="padding-top: calc(var(--header-height) + 2rem); padding-bottom: 3.5rem; display: flex; justify-content: center; align-items: center; flex: 1;">
+    <div style="width: 100%; max-width: 540px; background-color: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2.5rem 2.25rem; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);">
+      
+      <!-- Brand Header -->
+      <div style="text-align: center; margin-bottom: 1.75rem;">
+        <img src="assets/images/icons/logo.png" alt="ArcticPro Logo" style="width: 48px; height: 48px; margin-bottom: 0.75rem;">
+        <h1 id="authTitle" style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.35rem;">Client Portal</h1>
+        <p id="authSubtitle" style="font-size: 0.88rem; color: var(--text-muted); max-width: 420px; margin: 0 auto;">Access live IoT temperature streams, compliance ledgers, and emergency service tickets.</p>
+      </div>
+
+      <!-- Auth Switcher Tabs (Sign In / Register) -->
+      <div class="auth-tabs-nav" role="tablist" aria-label="Portal access options">
+        <button type="button" class="auth-tab-btn active" id="tabLoginBtn" role="tab" aria-selected="true" aria-controls="loginTabPanel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 16px; height: 16px;" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          <span>Sign In</span>
+        </button>
+        <button type="button" class="auth-tab-btn" id="tabRegisterBtn" role="tab" aria-selected="false" aria-controls="registerTabPanel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 16px; height: 16px;" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="23" y1="11" x2="17" y2="11"></line>
+          </svg>
+          <span>Register Facility</span>
+        </button>
+      </div>
+
+      <!-- Success Feedback Alert Banner -->
+      <div id="authAlertSuccess" class="form-alert-success" style="margin-bottom: 1.5rem;" role="alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 20px; height: 20px; flex-shrink: 0;" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="authAlertText">Account created successfully! Redirecting to Client Dashboard...</span>
+      </div>
+
+      <!-- ===================================================================
+           PANEL 1: SIGN IN FORM
+           =================================================================== -->
+      <div class="auth-panel" id="loginTabPanel" role="tabpanel" aria-labelledby="tabLoginBtn">
+        <form id="clientLoginForm" action="dashboard.html" method="get">
+          <div class="form-field" style="margin-bottom: 1.25rem;">
+            <label for="loginEmail" class="form-label">Commercial Account ID or Email</label>
+            <input type="email" id="loginEmail" class="form-input" value="rohit@freshway-supermarkets.com" required placeholder="name@company.com">
+          </div>
+
+          <div class="form-field" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <label for="loginPass" class="form-label" style="margin-bottom: 0;">Password</label>
+              <a href="contact.html" style="font-size: 0.78rem; color: var(--brand-blue); text-decoration: none;">Forgot Key?</a>
+            </div>
+            <input type="password" id="loginPass" class="form-input" value="ArcticPro2026Secure!" required placeholder="Enter facility password">
+          </div>
+
+          <button type="submit" class="btn-primary-action btn-block" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 0.95rem;">
+            <span>Enter Client Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <div style="margin-top: 1.5rem; padding: 0.85rem; background-color: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 8px; text-align: center;">
+            <span style="font-size: 0.78rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Demo Client Credentials Pre-loaded</span>
+            <strong style="font-size: 0.82rem; color: #22c55e;">Click "Enter Client Dashboard" to access demo live data</strong>
+          </div>
+        </form>
+
+        <div class="auth-toggle-link-row">
+          <span>New commercial customer or franchise?</span>
+          <button type="button" class="auth-switch-link" id="switchToRegisterBtn">Register Facility Account</button>
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           PANEL 2: REGISTER FACILITY FORM
+           =================================================================== -->
+      <div class="auth-panel hidden" id="registerTabPanel" role="tabpanel" aria-labelledby="tabRegisterBtn">
+        <form id="clientRegisterForm">
+          
+          <!-- Name & Company (2 columns) -->
+          <div class="auth-register-grid-2" style="margin-bottom: 1.15rem;">
+            <div class="form-field">
+              <label for="regFullName" class="form-label">Facility Manager Name *</label>
+              <input type="text" id="regFullName" class="form-input" required placeholder="e.g. David Miller">
+            </div>
+            <div class="form-field">
+              <label for="regCompany" class="form-label">Company / Chain Name *</label>
+              <input type="text" id="regCompany" class="form-input" required placeholder="e.g. Apex Cold Logistics">
+            </div>
+          </div>
+
+          <!-- Email & Phone (2 columns) -->
+          <div class="auth-register-grid-2" style="margin-bottom: 1.15rem;">
+            <div class="form-field">
+              <label for="regEmail" class="form-label">Business Email *</label>
+              <input type="email" id="regEmail" class="form-input" required placeholder="manager@company.com">
+            </div>
+            <div class="form-field">
+              <label for="regPhone" class="form-label">Facility Phone *</label>
+              <input type="tel" id="regPhone" class="form-input" required placeholder="+1 (555) 000-0000">
+            </div>
+          </div>
+
+          <!-- Facility Type Dropdown -->
+          <div class="form-field" style="margin-bottom: 1.15rem;">
+            <label for="regFacilityType" class="form-label">Facility Classification *</label>
+            <select id="regFacilityType" class="form-select" required>
+              <option value="" disabled selected>Select facility type...</option>
+              <option value="supermarket">Commercial Supermarket / Retail Grocery</option>
+              <option value="cold-storage">Cold Storage &amp; Refrigerated Distribution Hub</option>
+              <option value="food-processing">Food Processing &amp; Packaging Facility</option>
+              <option value="restaurant">Restaurant, Kitchen &amp; Hospitality Chain</option>
+              <option value="pharma">Pharmaceutical Cleanroom / Cryo Vault</option>
+              <option value="other">General Commercial Refrigeration Facility</option>
+            </select>
+          </div>
+
+          <!-- Password & Confirm Password (2 columns) -->
+          <div class="auth-register-grid-2" style="margin-bottom: 1.25rem;">
+            <div class="form-field">
+              <label for="regPassword" class="form-label">Create Password *</label>
+              <input type="password" id="regPassword" class="form-input" required placeholder="At least 8 chars" minlength="8">
+            </div>
+            <div class="form-field">
+              <label for="regConfirmPassword" class="form-label">Confirm Password *</label>
+              <input type="password" id="regConfirmPassword" class="form-input" required placeholder="Repeat password" minlength="8">
+            </div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div style="display: flex; align-items: flex-start; gap: 0.65rem; margin-bottom: 1.5rem;">
+            <input type="checkbox" id="regTerms" required style="margin-top: 0.25rem; accent-color: var(--brand-blue); width: 16px; height: 16px; cursor: pointer;">
+            <label for="regTerms" style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.45; cursor: pointer;">
+              I authorize ArcticPro to establish digital IoT telemetry monitoring and agree to the <a href="compliance.html" target="_blank" style="color: var(--brand-blue); text-decoration: underline;">Compliance Governance Terms</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary-action btn-block" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 0.95rem;">
+            <span>Create Commercial Account</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+
+        <div class="auth-toggle-link-row">
+          <span>Already registered your facility?</span>
+          <button type="button" class="auth-switch-link" id="switchToLoginBtn">Sign In Here</button>
+        </div>
+      </div>
+
+      <!-- Emergency Hotline Footer -->
+      <div style="margin-top: 2rem; text-align: center; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+        Need emergency dispatch immediately?
+        <a href="tel:+18004822653" style="color: var(--brand-crimson); font-weight: 700; text-decoration: none; display: block; margin-top: 0.25rem;">Call 24/7 Hotline: +1 (800) 482-COLD</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive Auth Switcher & Registration Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabLoginBtn = document.getElementById('tabLoginBtn');
+      const tabRegisterBtn = document.getElementById('tabRegisterBtn');
+      const loginTabPanel = document.getElementById('loginTabPanel');
+      const registerTabPanel = document.getElementById('registerTabPanel');
+      const switchToRegisterBtn = document.getElementById('switchToRegisterBtn');
+      const switchToLoginBtn = document.getElementById('switchToLoginBtn');
+      const authTitle = document.getElementById('authTitle');
+      const authSubtitle = document.getElementById('authSubtitle');
+      const clientRegisterForm = document.getElementById('clientRegisterForm');
+      const authAlertSuccess = document.getElementById('authAlertSuccess');
+      const authAlertText = document.getElementById('authAlertText');
+
+      function showLoginTab() {
+        tabLoginBtn.classList.add('active');
+        tabLoginBtn.setAttribute('aria-selected', 'true');
+        tabRegisterBtn.classList.remove('active');
+        tabRegisterBtn.setAttribute('aria-selected', 'false');
+
+        loginTabPanel.classList.remove('hidden');
+        registerTabPanel.classList.add('hidden');
+
+        authTitle.textContent = 'Client Portal Login';
+        authSubtitle.textContent = 'Access live IoT temperature streams, compliance ledgers, and emergency service tickets.';
+        window.history.replaceState(null, null, 'login.html');
+      }
+
+      function showRegisterTab() {
+        tabRegisterBtn.classList.add('active');
+        tabRegisterBtn.setAttribute('aria-selected', 'true');
+        tabLoginBtn.classList.remove('active');
+        tabLoginBtn.setAttribute('aria-selected', 'false');
+
+        registerTabPanel.classList.remove('hidden');
+        loginTabPanel.classList.add('hidden');
+
+        authTitle.textContent = 'Register Facility Account';
+        authSubtitle.textContent = 'Connect your commercial refrigeration facility to the ArcticPro telemetry network.';
+        window.history.replaceState(null, null, 'login.html#register');
+      }
+
+      tabLoginBtn.addEventListener('click', showLoginTab);
+      tabRegisterBtn.addEventListener('click', showRegisterTab);
+
+      if (switchToRegisterBtn) {
+        switchToRegisterBtn.addEventListener('click', showRegisterTab);
+      }
+      if (switchToLoginBtn) {
+        switchToLoginBtn.addEventListener('click', showLoginTab);
+      }
+
+      // Check URL hash or query param for direct register access
+      const urlParams = new URLSearchParams(window.location.search);
+      if (window.location.hash === '#register' || urlParams.get('tab') === 'register') {
+        showRegisterTab();
+      }
+
+      // Registration Form Submission & Validation
+      if (clientRegisterForm) {
+        clientRegisterForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const pass = document.getElementById('regPassword').value;
+          const confirmPass = document.getElementById('regConfirmPassword').value;
+          const fullName = document.getElementById('regFullName').value.trim();
+          const company = document.getElementById('regCompany').value.trim();
+
+          if (pass !== confirmPass) {
+            alert('Passwords do not match. Please re-enter.');
+            document.getElementById('regConfirmPassword').focus();
+            return;
+          }
+
+          // Show success message
+          authAlertText.textContent = `Welcome ${fullName}! Facility account for "${company}" created. Launching telemetry dashboard...`;
+          authAlertSuccess.style.display = 'flex';
+          authAlertSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+          // Redirect to dashboard after 1.5 seconds
+          setTimeout(function () {
+            window.location.href = 'dashboard.html';
+          }, 1500);
+        });
+      }
+    });
+  </script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

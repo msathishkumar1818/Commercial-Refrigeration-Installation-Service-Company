@@ -1,0 +1,1775 @@
+/* ==========================================================================
+   ARCTICPRO COMMERCIAL REFRIGERATION - RESPONSIVE STYLESHEET
+   Breakpoints: 320px, 375px, 425px, 768px, 820px, 1024px, 1280px, 1440px, 1536px, 1920px
+   ========================================================================== */
+
+/* Breakpoint: > 1200px (Desktop & Large Screens - Guard Mobile Drawer from displaying) */
+@media screen and (min-width: 1201px) {
+  .mobile-drawer,
+  .mobile-drawer.open,
+  .mobile-drawer-overlay,
+  .mobile-drawer-overlay.open {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transform: translateX(100%) !important;
+  }
+
+  [dir="rtl"] .mobile-drawer,
+  [dir="rtl"] .mobile-drawer.open {
+    transform: translateX(-100%) !important;
+  }
+}
+
+/* Breakpoint: <= 1200px (iPad Pro 13, iPad Pro, Surface Pro, iPad Mini & Tablets) */
+@media screen and (max-width: 1200px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+  }
+
+  .header-actions .control-btn {
+    display: none; /* Move to mobile drawer for clean single-line header */
+  }
+
+  .site-header .btn-header-cta {
+    display: none !important;
+  }
+
+  .btn-login {
+    padding: 0.45rem 0.95rem;
+    font-size: 0.8rem;
+  }
+
+  .installation-image-grid,
+  .flow-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+}
+
+/* =========================================================================
+   TABLET FOOTER: 2x2 GRID
+   Target devices: iPad Mini (768px), Surface Pro 10 (912px), iPad Pro (820px-1024px), iPad Pro 13 (1032px-1180px)
+   ========================================================================= */
+@media screen and (min-width: 768px) and (max-width: 1180px) {
+  .footer-top-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 3.5rem !important;
+    row-gap: 2.75rem !important;
+    margin-bottom: 3.5rem !important;
+  }
+
+  .footer-brand-col {
+    max-width: 100% !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-telemetry-badge {
+    width: fit-content !important;
+    max-width: 100% !important;
+    align-self: flex-start !important;
+  }
+
+  .footer-brand-desc {
+    max-width: 440px !important;
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    padding-top: 1.75rem !important;
+    border-top: 1px solid #1f2937 !important;
+  }
+
+  .footer-copyright {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .footer-bottom-links {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Breakpoint: <= 768px (Tablet Portrait & Large Mobile) */
+@media screen and (max-width: 768px) {
+  :root {
+    --header-height: 62px;
+  }
+
+  .brand-logo-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .brand-sub {
+    font-size: 0.62rem;
+  }
+
+  /* Mobile Header: CTA button removed from top navbar - placed strictly inside mobile menu */
+  .site-header .btn-header-cta {
+    display: none !important;
+  }
+
+  .mobile-drawer .btn-header-cta {
+    display: inline-flex !important;
+    width: 100%;
+    justify-content: center;
+    padding: 0.72rem 0.85rem;
+    font-size: 0.84rem;
+    gap: 0.45rem;
+    white-space: nowrap;
+  }
+
+  .mobile-drawer .btn-header-cta svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .mobile-drawer .btn-header-cta span {
+    display: inline !important;
+  }
+
+  .site-footer {
+    padding-bottom: 5rem;
+  }
+}
+
+/* Mobile Phones: Single column footer on screens <= 767px */
+@media screen and (max-width: 767px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.25rem !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+    padding-top: 1.25rem !important;
+    padding-right: 0 !important;
+  }
+
+  [dir="rtl"] .footer-bottom {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .footer-bottom-links {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.78rem !important;
+  }
+}
+
+/* Breakpoint: <= 425px (Mobile Standard) */
+@media screen and (max-width: 425px) {
+  .header-container {
+    padding: 0 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .header-actions {
+    gap: 0.45rem;
+  }
+
+  .brand-sub {
+    display: none; /* Keep header strictly 1 line */
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+
+  .btn-login {
+    display: none; /* Available directly inside mobile drawer */
+  }
+
+  .installation-image-grid,
+  .flow-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .mobile-drawer {
+    width: 90%;
+  }
+
+  #scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+
+  [dir="rtl"] #scroll-to-top {
+    right: auto;
+    left: 1rem;
+  }
+
+  .footer-bottom {
+    gap: 0.45rem;
+  }
+
+  .footer-bottom-links {
+    gap: 0.45rem;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.74rem;
+  }
+}
+
+/* Breakpoint: <= 375px (Compact Mobile - iPhone SE / Small screen) */
+@media screen and (max-width: 375px) {
+  .header-container {
+    padding: 0 0.75rem;
+  }
+
+  .brand-logo-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-name {
+    font-size: 0.82rem;
+  }
+
+  .eyebrow-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.74rem;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.72rem;
+  }
+}
+
+/* Breakpoint: <= 320px (Ultra Compact) */
+@media screen and (max-width: 320px) {
+  .brand-name {
+    font-size: 0.75rem;
+  }
+
+  .eyebrow-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.01em;
+    padding: 0.22rem 0.45rem;
+  }
+
+  .footer-bottom-links {
+    gap: 0.35rem;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.68rem;
+  }
+}
+
+/* Large Screens & Ultra-Wide: Keep container locked strictly to unified max-width */
+@media screen and (min-width: 1280px) {
+  .header-container,
+  .footer-container,
+  .section-container {
+    max-width: var(--site-container-max, 1200px);
+    width: 100%;
+  }
+}
+
+
+/* ==========================================================================
+   HOME 1 - SECTION RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+
+/* Breakpoint: <= 1024px (iPad Pro, Tablet Landscape) */
+@media screen and (max-width: 1024px) {
+  .hero-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .mosaic-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mosaic-feature-card {
+    height: 420px;
+  }
+
+  .mosaic-stack {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .mosaic-stack-card {
+    height: 220px;
+  }
+
+  .telemetry-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .dispatch-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Breakpoint: <= 768px (iPad Mini, Tablet Portrait) */
+@media screen and (max-width: 768px) {
+  :root {
+    --header-height: 62px;
+    --site-container-pad: 1rem;
+  }
+
+  .section-container {
+    padding: 0 var(--site-container-pad);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section-wrapper {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+    line-height: 1.22;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .section-desc {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .eyebrow-badge {
+    font-size: 0.74rem;
+    letter-spacing: 0.03em;
+    padding: 0.28rem 0.65rem;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.35;
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+  }
+
+  .hero-telemetry-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .telemetry-hud-overlay,
+  .hero-service-badge-strip {
+    position: static;
+    margin-top: 1rem;
+    border-radius: 8px;
+    padding: 0.85rem 1.15rem;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .mosaic-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .telemetry-quad-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .cinematic-facility-box {
+    height: auto;
+    min-height: auto;
+  }
+
+  .cinematic-facility-overlay {
+    padding: 2.25rem 1.5rem;
+    max-width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.85) 100%);
+  }
+
+  .facility-overlay-title {
+    font-size: 1.65rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+
+  .facility-overlay-desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+
+  .facility-specs-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .cta-technical-banner {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .cta-banner-title {
+    font-size: 1.85rem;
+  }
+}
+
+/* Breakpoint: <= 425px (Mobile Standard, Pixel 7/8/9, iPhone 13 Pro) */
+@media screen and (max-width: 425px) {
+  :root {
+    --site-container-pad: 0.85rem;
+  }
+
+  .section-wrapper {
+    padding: 2.75rem 0;
+  }
+
+  .eyebrow-badge {
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0.55rem;
+    gap: 0.35rem;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.3;
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+  }
+
+  .section-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .hero-actions-row {
+    margin-top: 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .btn-primary-action,
+  .btn-secondary-action,
+  .btn-emergency-call {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    font-size: 0.84rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .hero-telemetry-strip {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .hero-main-img {
+    height: 250px;
+  }
+
+  .telemetry-hud-overlay,
+  .hero-service-badge-strip {
+    position: static;
+    margin-top: 0.75rem;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .badge-strip-item {
+    font-size: 0.82rem;
+  }
+
+  .badge-strip-sub {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  .hud-reading {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hud-temp {
+    font-size: 1.45rem;
+  }
+
+  .hud-meta {
+    font-size: 0.72rem;
+  }
+
+  .hud-badge-wrap {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .telemetry-quad-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .telemetry-pure-card {
+    height: 220px;
+  }
+
+  .telemetry-pure-title {
+    font-size: 0.86rem;
+  }
+
+  .dispatch-img-frame {
+    height: 240px;
+  }
+
+  .dispatch-item-title {
+    font-size: 0.92rem;
+  }
+
+  .dispatch-item-desc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .mosaic-feature-card {
+    height: 290px;
+  }
+
+  .mosaic-stack-card {
+    height: 200px;
+  }
+
+  .mosaic-card-gradient {
+    padding: 1.15rem;
+  }
+
+  .mosaic-card-title {
+    font-size: 1.05rem;
+  }
+
+  .mosaic-card-sub {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .cinematic-facility-box {
+    height: auto;
+    min-height: auto;
+  }
+
+  .cinematic-facility-overlay {
+    padding: 1.75rem 1.15rem;
+  }
+
+  .facility-overlay-title {
+    font-size: 1.3rem;
+  }
+
+  .facility-overlay-desc {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .facility-specs-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .spec-number {
+    font-size: 1.25rem;
+  }
+
+  .spec-title {
+    font-size: 0.72rem;
+  }
+
+  .cta-technical-banner {
+    padding: 2rem 1.15rem;
+  }
+
+  .cta-banner-title {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .cta-banner-desc {
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+
+  .cta-btn-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   HOME 2 - SECTION RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+
+/* Breakpoint: <= 1024px (iPad Pro, Tablet Landscape) */
+@media screen and (max-width: 1024px) {
+  .home2-panoramic-card {
+    height: 600px;
+  }
+
+  .hero-center-title {
+    font-size: 2.05rem;
+  }
+
+  .hero-center-stats-bar {
+    max-width: 600px;
+  }
+
+  .stat-col-val {
+    font-size: 1.1rem;
+  }
+
+  .even-infrastructure-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .diag-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .matrix-title {
+    min-height: 2.85rem;
+  }
+
+  .matrix-text {
+    min-height: 4.8rem;
+  }
+
+  .home2-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.5rem 2.5rem;
+  }
+
+  .home2-cta-btns {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* Breakpoint: <= 768px (iPad Mini, Tablet Portrait) */
+@media screen and (max-width: 768px) {
+  .home2-panoramic-card {
+    height: auto;
+    min-height: 640px;
+  }
+
+  .home2-hero-overlay {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .hero-center-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-center-desc {
+    font-size: 0.95rem;
+  }
+
+  .hero-center-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn-hero-orange,
+  .btn-hero-teal {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-center-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-stat-col {
+    border-right: none !important;
+    border-left: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 0.85rem;
+  }
+
+  .hero-stat-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .hero-fig-caption {
+    position: static;
+    margin-top: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .distrib-content-strip {
+    padding: 2rem 1.5rem;
+  }
+
+  .distrib-title {
+    font-size: 1.75rem;
+  }
+
+  .home2-cta-title {
+    font-size: 2rem;
+  }
+}
+
+/* Breakpoint: <= 425px (Mobile Standard, Pixel 7/8/9, iPhone 13 Pro) */
+@media screen and (max-width: 425px) {
+  .home2-panoramic-card {
+    height: auto;
+    min-height: 680px;
+  }
+
+  .hero-center-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .hero-center-title {
+    font-size: 1.45rem;
+  }
+
+  .hero-center-desc {
+    font-size: 0.88rem;
+  }
+
+
+  .home2-hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .home2-telemetry-dock {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .even-card-img-wrap {
+    height: 200px;
+  }
+
+  .diag-img-container {
+    height: 300px;
+  }
+
+  .distrib-wide-card {
+    height: 460px;
+  }
+
+  .distrib-chips-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .matrix-title,
+  .matrix-text {
+    min-height: auto;
+  }
+
+  .home2-cta-box {
+    padding: 2rem 1.25rem;
+  }
+
+  .home2-cta-title {
+    font-size: 1.65rem;
+  }
+
+  .home2-cta-btns {
+    flex-direction: column;
+  }
+
+  .home2-cta-btns a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   ABOUT PAGE - RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+
+/* Breakpoint: <= 1024px (iPad Pro, Tablet Landscape) */
+@media screen and (max-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-hero-title {
+    font-size: 2.3rem;
+  }
+
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .about-leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .network-counters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.5rem 2.5rem;
+  }
+
+  .about-cta-actions {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* Breakpoint: <= 768px (iPad Mini, Tablet Portrait) */
+@media screen and (max-width: 768px) {
+  .about-hero-title {
+    font-size: 2rem;
+  }
+
+  .network-overlay {
+    padding: 2.25rem 1.5rem;
+    min-height: auto;
+  }
+
+  .network-overlay .section-title {
+    font-size: 1.55rem;
+  }
+
+  .network-counters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 1rem;
+  }
+}
+
+/* Breakpoint: <= 425px (Mobile Standard, Pixel 7/8/9, iPhone 13 Pro) */
+@media screen and (max-width: 425px) {
+  .about-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .about-hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .about-milestones-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .about-hero-img-box {
+    height: 300px;
+  }
+
+  .pillar-img-wrap {
+    height: 200px;
+  }
+
+  .leadership-img-box {
+    height: 300px;
+  }
+
+  .about-network-card {
+    height: auto;
+    min-height: auto;
+  }
+
+  .network-overlay {
+    padding: 1.75rem 1.15rem;
+    min-height: auto;
+  }
+
+  .network-overlay .section-title {
+    font-size: 1.32rem;
+    line-height: 1.25;
+  }
+
+  .network-overlay .section-desc {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .network-counters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem 0.85rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .net-counter-val {
+    font-size: 1.45rem;
+  }
+
+  .net-counter-lbl {
+    font-size: 0.7rem;
+  }
+
+  .about-cta-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .about-cta-title {
+    font-size: 1.65rem;
+  }
+
+  .about-cta-actions {
+    flex-direction: column;
+  }
+
+  .about-cta-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   SERVICES PAGE - RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+
+/* Breakpoint: <= 1024px (iPad Pro, Tablet Landscape) */
+@media screen and (max-width: 1024px) {
+  .services-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .services-hero-title {
+    font-size: 2.15rem;
+  }
+
+  .services-quad-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .flow-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .services-images-only-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .compliance-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .services-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.5rem 2.5rem;
+  }
+
+  .services-cta-btns {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* Breakpoint: <= 767px (Smartphones, Mobile Portrait) */
+@media screen and (max-width: 767px) {
+  .services-quad-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .services-images-only-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .service-card-heading {
+    min-height: auto;
+    font-size: 1.12rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card-desc {
+    min-height: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Breakpoint: <= 768px (iPad Mini, Tablet Portrait) */
+@media screen and (max-width: 768px) {
+  .services-hero-title {
+    font-size: 2rem;
+  }
+
+  .compliance-spec-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.15rem;
+  }
+
+  .spec-badge {
+    align-self: flex-start;
+  }
+
+  .compliance-spec-body {
+    width: 100%;
+  }
+
+  .compliance-spec-body h4 {
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+  }
+
+  .compliance-spec-body p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .services-cta-title {
+    font-size: 1.85rem;
+  }
+}
+
+/* Breakpoint: <= 425px (Mobile Standard, Pixel 7/8/9, iPhone 13 Pro) */
+@media screen and (max-width: 425px) {
+  .services-hero-title {
+    font-size: 1.65rem;
+  }
+
+  .services-hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .services-hero-img-box {
+    height: 300px;
+  }
+
+  .services-floating-dock {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+  }
+
+  .services-sla-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .service-sla-chip {
+    width: fit-content;
+    max-width: 100%;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+  }
+
+  .services-quad-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compliance-img-box {
+    height: 300px;
+  }
+
+  .compliance-spec-list {
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .compliance-spec-card {
+    padding: 0.95rem 1rem;
+    gap: 0.55rem;
+  }
+
+  .compliance-spec-body h4 {
+    font-size: 0.95rem;
+  }
+
+  .compliance-spec-body p {
+    font-size: 0.84rem;
+  }
+
+  .services-cta-banner {
+    padding: 2rem 1.25rem;
+  }
+
+  .services-cta-title {
+    font-size: 1.65rem;
+  }
+
+  .services-cta-btns {
+    flex-direction: column;
+  }
+
+  .services-cta-btns a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================================
+   COMPLIANCE PAGE RESPONSIVE ADAPTATIONS (compliance.html)
+   ========================================================================= */
+
+/* Breakpoint: <= 1024px (iPad Pro, Tablet Landscape) */
+@media screen and (max-width: 1024px) {
+  .comp-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .protocols-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .compliance-mosaic-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mosaic-featured-card {
+    min-height: 480px;
+  }
+
+  .case-study-showcase-card {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-img-col {
+    min-height: 380px;
+    height: 380px;
+  }
+
+  .case-study-content-col {
+    padding: 3rem 2.25rem;
+    gap: 2rem;
+  }
+
+  .matrix-cinematic-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Breakpoint: <= 768px (iPad Mini, Tablet Portrait) */
+@media screen and (max-width: 768px) {
+  .comp-hero-heading {
+    font-size: 2.15rem;
+  }
+
+  .comp-hero-chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-chip {
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chip-metric {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .chip-label {
+    font-size: 0.68rem;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  .pipeline-title {
+    font-size: 1.85rem;
+  }
+
+  .mosaic-title-pill {
+    font-size: 1.75rem;
+  }
+
+  .mosaic-mini-title {
+    font-size: 1.05rem;
+  }
+
+  .matrix-cinematic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comp-cta-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .comp-cta-heading {
+    font-size: 2rem;
+  }
+}
+
+/* Breakpoint: <= 480px (iPhone 13 Pro, Pixel 7/8/9 Pro, Compact Mobile) */
+@media screen and (max-width: 480px) {
+  .comp-badge {
+    font-size: 0.68rem;
+    padding: 0.28rem 0.65rem;
+    gap: 0.35rem;
+  }
+
+  .comp-hero-heading {
+    font-size: 1.7rem;
+  }
+
+  .comp-hero-lead {
+    font-size: 0.95rem;
+  }
+
+  .comp-hero-chips {
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-chip {
+    padding: 0.65rem 0.35rem;
+  }
+
+  .chip-metric {
+    font-size: 1.15rem;
+  }
+
+  .chip-label {
+    font-size: 0.62rem;
+    line-height: 1.2;
+  }
+
+  .protocols-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mosaic-quad-right {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .mosaic-featured-card {
+    min-height: 440px;
+  }
+
+  .mosaic-mini-card {
+    min-height: 230px;
+  }
+
+  .mosaic-featured-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .mosaic-btn-arrow {
+    align-self: flex-end;
+  }
+
+  .mosaic-title-pill {
+    font-size: 1.5rem;
+  }
+
+  .comp-hero-img-wrap {
+    height: 300px;
+  }
+
+  .comp-hud-panel {
+    position: relative;
+    inset: auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+  }
+
+  .hud-header {
+    gap: 0.4rem;
+  }
+
+  .hud-live-title {
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+  }
+
+  .hud-timestamp {
+    font-size: 0.64rem;
+  }
+
+  .hud-row {
+    font-size: 0.76rem;
+    gap: 0.45rem;
+  }
+
+  .hud-target-name {
+    font-size: 0.75rem;
+  }
+
+  .hud-val {
+    font-size: 0.72rem;
+  }
+
+  .hud-signature {
+    gap: 0.4rem;
+    font-size: 0.65rem;
+  }
+
+  .sig-label {
+    font-size: 0.64rem;
+  }
+
+  .sig-code {
+    font-size: 0.64rem;
+  }
+
+  .case-study-img-col {
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .case-study-content-col {
+    padding: 2.25rem 1.25rem;
+    gap: 1.75rem;
+  }
+
+  .case-study-item {
+    padding-left: 1.15rem;
+  }
+
+  .case-study-item-title {
+    font-size: 1.25rem;
+  }
+
+  .case-study-item-desc {
+    font-size: 0.92rem;
+  }
+
+  .matrix-cinematic-card {
+    height: 350px;
+  }
+
+  .comp-cta-heading {
+    font-size: 1.55rem;
+  }
+
+  .comp-cta-desc {
+    font-size: 0.95rem;
+  }
+
+  .comp-cta-badges {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .badge-item {
+    justify-content: center;
+  }
+
+  .comp-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .comp-cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .comp-hero-chips {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .hero-chip {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 0.85rem;
+    text-align: left;
+  }
+
+  .chip-metric {
+    font-size: 1.05rem;
+  }
+
+  .chip-label {
+    font-size: 0.65rem;
+    margin-top: 0;
+    text-align: right;
+  }
+}
+
+/* =========================================================================
+   CONTACT PAGE RESPONSIVE ADAPTATIONS (contact.html)
+   ========================================================================= */
+
+/* Breakpoint: <= 1024px (iPad Pro, Tablet Landscape) */
+@media screen and (max-width: 1024px) {
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Breakpoint: <= 1100px (Desktop constraint safety) */
+@media screen and (max-width: 1100px) and (min-width: 769px) {
+  .contact-telemetry-chips {
+    gap: 0.65rem;
+  }
+  .contact-chip {
+    padding: 0.75rem 0.65rem;
+  }
+  .contact-chip .chip-metric {
+    font-size: 0.88rem;
+  }
+  .contact-chip .chip-label {
+    font-size: 0.66rem;
+  }
+}
+
+/* Breakpoint: <= 768px (iPad Mini, Tablet Portrait) */
+@media screen and (max-width: 768px) {
+  .contact-hero-title {
+    font-size: 2.15rem;
+  }
+
+  .contact-telemetry-chips {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .contact-chip {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.15rem;
+    min-height: auto;
+  }
+
+  .contact-chip .chip-metric {
+    font-size: 0.98rem;
+  }
+
+  .contact-chip .chip-label {
+    margin-top: 0;
+    font-size: 0.72rem;
+  }
+
+  .form-row-duo {
+    grid-template-columns: 1fr;
+  }
+
+  .map-frame-box {
+    height: 380px;
+  }
+
+  .map-coordinates-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .contact-cta-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-cta-heading {
+    font-size: 2rem;
+  }
+}
+
+/* Breakpoint: <= 480px (iPhone 13 Pro, Pixel 7/8/9 Pro, Compact Mobile) */
+@media screen and (max-width: 480px) {
+  .contact-hero-title {
+    font-size: 1.7rem;
+  }
+
+  .contact-hero-lead {
+    font-size: 0.95rem;
+  }
+
+  .contact-hero-img-box {
+    height: 300px;
+  }
+
+  .contact-chip {
+    padding: 0.75rem 1rem;
+  }
+
+  .contact-chip .chip-metric {
+    font-size: 0.92rem;
+  }
+
+  .contact-chip .chip-label {
+    font-size: 0.68rem;
+  }
+
+  .contact-hud-tag {
+    position: relative;
+    inset: auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+  }
+
+  .form-card,
+  .dispatch-channels-card {
+    padding: 1.25rem 1.15rem;
+    margin-bottom: 2rem;
+  }
+
+  .metric-row {
+    font-size: 0.78rem;
+    gap: 0.45rem;
+    padding: 0.35rem 0;
+  }
+
+  .m-label {
+    font-size: 0.68rem;
+  }
+
+  .m-val {
+    font-size: 0.78rem;
+  }
+
+  .sla-guarantee-list li {
+    font-size: 0.84rem;
+    line-height: 1.4;
+  }
+
+  .map-frame-box {
+    height: 320px;
+  }
+
+  .contact-cta-heading {
+    font-size: 1.55rem;
+  }
+
+  .contact-cta-desc {
+    font-size: 0.95rem;
+  }
+
+  .contact-cta-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-cta-btns .btn-primary-action,
+  .contact-cta-btns .btn-secondary-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   TELEMETRY QUAD MODELS & PURE GALLERY GRID RESPONSIVENESS
+   ========================================================================== */
+@media screen and (max-width: 1100px) {
+  .telemetry-quad-models-grid,
+  .telemetry-quad-gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .telemetry-quad-models-grid,
+  .telemetry-quad-gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+
+  .model-img-wrap {
+    height: 190px !important;
+  }
+
+  .telemetry-pure-card {
+    height: 240px !important;
+  }
+}
+
+/* ==========================================================================
+   STANDARDIZED SUBPAGE FIRST SECTIONS (SERVICES, ABOUT, COMPLIANCE, CONTACT)
+   Requirement: First section of all remaining pages has the same height
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  .services-hero,
+  .about-hero,
+  .compliance-hero-section,
+  .contact-hero-section {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  .services-hero-grid,
+  .about-hero-grid,
+  .comp-hero-grid,
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .services-hero-img-box,
+  .about-hero-img-box,
+  .comp-hero-visual-card,
+  .comp-hero-img-wrap,
+  .contact-hero-img-box {
+    height: 350px !important;
+  }
+
+  .services-hero-title,
+  .about-hero-title,
+  .comp-hero-heading,
+  .contact-hero-title {
+    font-size: 2.15rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services-hero,
+  .about-hero,
+  .compliance-hero-section,
+  .contact-hero-section {
+    padding: 2.5rem 0;
+  }
+
+  .services-hero-img-box,
+  .about-hero-img-box,
+  .comp-hero-visual-card,
+  .comp-hero-img-wrap,
+  .contact-hero-img-box {
+    height: 280px !important;
+  }
+
+  .services-hero-title,
+  .about-hero-title,
+  .comp-hero-heading,
+  .contact-hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-hero,
+  .about-hero,
+  .compliance-hero-section,
+  .contact-hero-section {
+    padding: 2rem 0;
+  }
+
+  .services-hero-img-box,
+  .about-hero-img-box,
+  .comp-hero-visual-card,
+  .comp-hero-img-wrap,
+  .contact-hero-img-box {
+    height: 240px !important;
+  }
+
+  .services-hero-title,
+  .about-hero-title,
+  .comp-hero-heading,
+  .contact-hero-title {
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+}

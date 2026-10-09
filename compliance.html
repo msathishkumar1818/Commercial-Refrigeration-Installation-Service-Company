@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refrigeration Compliance & Automated Telemetry Audits | Commercial Refrigeration Installation & Service Company
+  </title>
+  <meta name="description"
+    content="NIST-traceable IoT temperature monitoring, FDA 21 CFR Part 11 electronic records, EPA Section 608 refrigerant tracking, and automated HACCP cold chain compliance.">
+  <meta name="keywords"
+    content="commercial refrigeration compliance, FDA 21 CFR Part 11, HACCP temperature logs, EPA section 608 leak tracking, cold chain monitoring">
+  <meta name="author" content="Commercial Refrigeration Installation & Service Company">
+  <link rel="canonical" href="compliance.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title"
+    content="Refrigeration Compliance & Automated Telemetry Audits | Commercial Refrigeration Installation & Service Company">
+  <meta property="og:description"
+    content="Automated HACCP, FDA, and EPA commercial refrigeration compliance logs with continuous IoT telemetry.">
+  <meta property="og:image" content="assets/images/compliance/compliance-hero-auditing.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/icons/logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="page-compliance">
+
+  <!-- ======================================================================
+       PAGE LOADER
+       ====================================================================== -->
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-icon-wrap">
+        <img src="assets/images/icons/logo.png" alt="Company Logo" width="56" height="56" class="loader-logo-img">
+      </div>
+      <div class="loader-title">Compliance &amp; IoT Audit Terminal</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       FIXED SLIM HEADER (Single-Line Desktop Alignment)
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="brand-link" id="brandLink" aria-label="Commercial Refrigeration Home">
+        <img src="assets/images/icons/logo.png" alt="Commercial Refrigeration Logo" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-name">Arctic<span>Pro</span></span>
+          <span class="brand-sub">Refrigeration &amp; Service</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (Exactly 6 Primary Nav Items) -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Click-only Dropdown) -->
+        <div class="nav-item" id="homeDropdownWrapper">
+          <button type="button" class="nav-dropdown-btn" id="homeDropdownBtn" aria-haspopup="true" aria-expanded="false"
+            aria-label="Home menu">
+            <span>Home</span>
+            <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" id="homeDropdownMenu" role="menu">
+            <a href="index.html" class="dropdown-item" role="menuitem">Home 1 (Installation)</a>
+            <a href="home-2.html" class="dropdown-item" role="menuitem">Home 2 (24/7 Service)</a>
+          </div>
+        </div>
+
+        <!-- 2. About -->
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </div>
+
+        <!-- 3. Services -->
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">Services</a>
+        </div>
+
+
+
+        <!-- 4. Compliance (Active) -->
+        <div class="nav-item">
+          <a href="compliance.html" class="nav-link active" aria-current="page">Compliance</a>
+        </div>
+
+
+        <!-- 5. Contact (Directly Visible) -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <!-- 6. Dashboard -->
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+        </div>
+
+      </nav>
+
+      <!-- Header Action Controls: RTL, Dark Mode, Direct Login -->
+      <div class="header-actions">
+        <!-- RTL Toggle -->
+        <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR"
+          title="Toggle RTL / LTR">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 8 16 13"></polyline>
+            <line x1="21" y1="8" x2="9" y2="8"></line>
+            <polyline points="8 21 3 16 8 11"></polyline>
+            <line x1="3" y1="16" x2="15" y2="16"></line>
+          </svg>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle dark mode"
+          title="Toggle Dark/Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Client Portal Login -->
+        <a href="login.html" class="control-btn" id="headerLoginBtn" aria-label="Client Portal Login"
+          title="Client Portal Login">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+        </a>
+
+        <!-- Commercial Refrigeration Service CTA Button (Visible on Desktop, Hidden on Mobile Header) -->
+        <a href="contact.html" class="btn-header-cta" id="headerCtaBtn" aria-label="Request Commercial Refrigeration Service">
+          <span class="cta-pulse-dot" aria-hidden="true"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+          <span>Request Service</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle Hamburger -->
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open mobile navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 22px; height: 22px;" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MOBILE DRAWER OVERLAY & MENU
+       ====================================================================== -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-link">
+        <img src="assets/images/icons/logo.png" alt="ArcticPro Logo" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-name">Arctic<span>Pro</span></span>
+          <span class="brand-sub">Refrigeration &amp; Service</span>
+        </div>
+      </div>
+      <button type="button" class="control-btn" id="mobileDrawerClose" aria-label="Close navigation drawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Links -->
+    <ul class="mobile-nav-list">
+      <!-- Home Accordion (Click only) -->
+      <li class="mobile-accordion-item" id="mobileHomeAccordion">
+        <button type="button" class="mobile-nav-link" id="mobileHomeAccordionBtn" aria-label="Toggle Home menu">
+          <span>Home</span>
+          <svg class="dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="index.html" class="mobile-sub-link">Home 1 (Installation)</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2 (24/7 Service)</a>
+        </div>
+      </li>
+
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+
+      <li><a href="compliance.html" class="mobile-nav-link active">Compliance</a></li>
+
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+    </ul>
+
+    <!-- Mobile Drawer Controls & Bottom Actions (CTA Button at the Very Last) -->
+    <div class="mobile-drawer-footer">
+      <div class="mobile-controls-row">
+        <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">Quick Settings</span>
+        <div style="display: flex; gap: 0.5rem;">
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle RTL mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 3 21 8 16 13"></polyline>
+              <line x1="21" y1="8" x2="9" y2="8"></line>
+              <polyline points="8 21 3 16 8 11"></polyline>
+              <line x1="3" y1="16" x2="15" y2="16"></line>
+            </svg>
+          </button>
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle dark mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Login Button -->
+      <a href="login.html" class="mobile-drawer-login-btn" id="mobileDrawerLoginBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" style="width: 18px; height: 18px;" aria-hidden="true">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>Client Portal Login</span>
+      </a>
+
+      <!-- Commercial CTA Button (Placed At the Very Last) -->
+      <a href="contact.html" class="btn-header-cta mobile-drawer-cta-btn" id="mobileDrawerCtaBtn">
+        <span class="cta-pulse-dot" aria-hidden="true"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path
+            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+          </path>
+        </svg>
+        <span>Request Service &bull; 24/7 Dispatch</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT: EXACTLY 5 CONTENT SECTIONS -->
+  <main id="mainContent">
+
+    <!-- =========================================================================
+         SECTION 1: COMPLIANCE HERO (#complianceHero)
+         Unique layout: Audit command split hero with live sensor HUD card & chips
+    ========================================================================== -->
+    <section class="compliance-hero-section" id="complianceHero">
+      <div class="section-container">
+        <div class="comp-hero-grid">
+
+          <!-- Left Column: Concise Editorial Content -->
+          <div class="comp-hero-content">
+            <div class="comp-badge">
+              <span class="badge-dot"></span>
+              <span class="badge-text">AUDIT TELEMETRY &bull; 21 CFR 11 COMPLIANT</span>
+            </div>
+            <h1 class="comp-hero-heading">Continuous Temperature Telemetry &amp; Regulatory Compliance</h1>
+            <p class="comp-hero-lead">Cryptographically sealed audit trails satisfying FDA, HACCP CCP-1, and EPA Section
+              608 mandates with zero manual logging.</p>
+
+            <div class="comp-hero-chips">
+              <div class="hero-chip">
+                <span class="chip-metric">99.99%</span>
+                <span class="chip-label">Audit Pass Rate</span>
+              </div>
+              <div class="hero-chip">
+                <span class="chip-metric">&lt; 30s</span>
+                <span class="chip-label">Excursion Dispatch</span>
+              </div>
+              <div class="hero-chip">
+                <span class="chip-metric">7 Years</span>
+                <span class="chip-label">Digital Cold Logs</span>
+              </div>
+            </div>
+
+            <div class="comp-hero-actions">
+              <a href="#complianceCTA" class="btn-primary-action">
+                <span>Request Facility Audit</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+              <a href="dashboard.html" class="btn-secondary-action">
+                <span>View Live Telemetry</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Prominent Visual with Telemetry HUD -->
+          <div class="comp-hero-visual-card">
+            <div class="comp-hero-img-wrap">
+              <img src="assets/images/compliance/p28.jpg"
+                alt="Commercial refrigeration engineer verifying digital compliance terminal" width="800" height="520"
+                loading="eager">
+              <div class="comp-hero-overlay"></div>
+            </div>
+
+            <!-- Live Sensor HUD Badge Overlay -->
+            <div class="comp-hud-panel">
+              <div class="hud-header">
+                <div class="hud-status-indicator">
+                  <span class="hud-live-beacon"></span>
+                  <span class="hud-live-title">LIVE TELEMETRY STREAM</span>
+                </div>
+                <span class="hud-timestamp">SYNCED: 10:42:09 UTC</span>
+              </div>
+
+              <div class="hud-data-rows">
+                <div class="hud-row">
+                  <div class="hud-row-target">
+                    <span class="hud-dot cold-dot"></span>
+                    <span class="hud-target-name">Blast Freezer #4</span>
+                  </div>
+                  <span class="hud-val cold-val">-22.4&deg;C &bull; NOMINAL</span>
+                </div>
+                <div class="hud-row">
+                  <div class="hud-row-target">
+                    <span class="hud-dot chill-dot"></span>
+                    <span class="hud-target-name">Rack-B Suction</span>
+                  </div>
+                  <span class="hud-val">182.4 PSI &bull; STABLE</span>
+                </div>
+              </div>
+
+              <div class="hud-signature">
+                <span class="sig-label">LEDGER HASH:</span>
+                <code class="sig-code">SHA-256: 8f9b4c2...ec01 (SEALED)</code>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: REGULATORY PROTOCOLS (#regulatoryProtocols)
+         Unique layout: 4-Quadrant Symmetrical Regulatory Protocol Vault
+         Even cards, equal image ratios, identical text rows, bright high-contrast typography
+    ========================================================================== -->
+    <!-- =========================================================================
+         SECTION 2: REGULATORY PROTOCOLS (#regulatoryProtocols)
+         Asymmetric 5-Item Bento Mosaic Model (Matching User Reference Architecture)
+         Left Column: Featured Tall Highlight Card (01) with Blue Tint Gradient & HUD
+         Right Column: 2x2 Symmetrical Grid (02, 03, 04, 05) with Numeric Tags & Action Badges
+    ========================================================================== -->
+    <section class="regulatory-protocols-section" id="regulatoryProtocols">
+      <div class="section-container">
+
+        <div class="section-title-wrap text-center" style="margin-bottom: 3rem;">
+          <span class="section-kicker">GOVERNMENT &amp; INDUSTRY MANDATES</span>
+          <h2 class="section-heading">Certified Regulatory Protocol Frameworks</h2>
+          <p class="section-desc">Fully automated telemetry systems pre-configured to satisfy rigorous federal and
+            international cold chain enforcement.</p>
+        </div>
+
+        <!-- 5-Item Asymmetric Mosaic Grid (Matching Reference Architecture) -->
+        <div class="compliance-mosaic-grid">
+
+          <!-- Left Featured Tall Card (01) -->
+          <article class="mosaic-featured-card">
+            <img src="assets/images/compliance/p29.jpg"
+              alt="FDA 21 CFR Part 11 Electronic Temperature Audit Logging Console" width="800" height="900"
+              loading="lazy">
+            <div class="mosaic-featured-overlay">
+              <div class="mosaic-idx-box">01</div>
+              <div class="mosaic-featured-bottom">
+                <div class="mosaic-featured-info">
+                  <div class="mosaic-featured-badge-title">
+                    <span class="mosaic-title-pill">ELECTRONIC AUDITS</span>
+                  </div>
+                  <div class="mosaic-sub-metric">FDA 21 CFR 11 &bull; NIST &plusmn;0.1&deg;C Standard</div>
+                  <p class="mosaic-featured-desc">
+                    Cryptographic signature tracking and tamper-evident digital records for pharma cold storage and
+                    clinical bio-banking.
+                  </p>
+                </div>
+                <a href="#complianceMatrix" class="mosaic-btn-arrow" aria-label="Explore FDA 21 CFR Details">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Right 2x2 Grid (02, 03, 04, 05) -->
+          <div class="mosaic-quad-right">
+
+            <!-- Card 02: EPA Section 608 -->
+            <article class="mosaic-mini-card">
+              <img src="assets/images/compliance/p30.jpg" alt="EPA Section 608 Refrigerant Recovery" width="600"
+                height="420" loading="lazy">
+              <div class="mosaic-mini-overlay">
+                <div class="mosaic-idx-box">02</div>
+                <div class="mosaic-mini-bottom">
+                  <div class="mosaic-mini-info">
+                    <h3 class="mosaic-mini-title">REFRIGERANT LEAKS</h3>
+                    <div class="mosaic-mini-sub">EPA 608 &bull; &lt;10% Threshold</div>
+                  </div>
+                  <a href="#complianceMatrix" class="mosaic-mini-arrow" aria-label="Explore EPA Section 608">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 03: HACCP CCP-1 -->
+            <article class="mosaic-mini-card">
+              <img src="assets/images/services/p31.jpg" alt="HACCP Critical Control Point Audit" width="600"
+                height="420" loading="lazy">
+              <div class="mosaic-mini-overlay">
+                <div class="mosaic-idx-box">03</div>
+                <div class="mosaic-mini-bottom">
+                  <div class="mosaic-mini-info">
+                    <h3 class="mosaic-mini-title">HACCP CONTROLS</h3>
+                    <div class="mosaic-mini-sub">CCP-1 &bull; 15s Probe Frequency</div>
+                  </div>
+                  <a href="#complianceMatrix" class="mosaic-mini-arrow" aria-label="Explore HACCP CCP-1">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 04: ISO 22000 & GFSI -->
+            <article class="mosaic-mini-card">
+              <img src="assets/images/about/p32.jpg" alt="ISO 22000 Cold Chain Food Safety" width="600" height="420"
+                loading="lazy">
+              <div class="mosaic-mini-overlay">
+                <div class="mosaic-idx-box">04</div>
+                <div class="mosaic-mini-bottom">
+                  <div class="mosaic-mini-info">
+                    <h3 class="mosaic-mini-title">COLD CHAIN TRACE</h3>
+                    <div class="mosaic-mini-sub">ISO 22000 &bull; GFSI Standard</div>
+                  </div>
+                  <a href="#complianceMatrix" class="mosaic-mini-arrow" aria-label="Explore ISO 22000">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 05: USDA Cold Storage Inspections -->
+            <article class="mosaic-mini-card">
+              <img src="assets/images/compliance/p28.jpg" alt="USDA Walk-in Storage Temperature Chamber Validation"
+                width="600" height="420" loading="lazy">
+              <div class="mosaic-mini-overlay">
+                <div class="mosaic-idx-box">05</div>
+                <div class="mosaic-mini-bottom">
+                  <div class="mosaic-mini-info">
+                    <h3 class="mosaic-mini-title">FACILITY AUDITS</h3>
+                    <div class="mosaic-mini-sub">USDA &bull; Continuous 24/7 Logs</div>
+                  </div>
+                  <a href="#complianceMatrix" class="mosaic-mini-arrow" aria-label="Explore USDA Audit">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: AUTOMATED AUDIT PIPELINE (#automatedAuditPipeline)
+         2-Column Case Study Showcase (Matching User Reference Architecture)
+         Left Column: Full-Height Commercial Refrigeration Facility Visual
+         Right Column: 3 Editorial Sections with Orange Left Accent Bars
+    ========================================================================== -->
+    <section class="audit-pipeline-section" id="automatedAuditPipeline">
+      <div class="section-container">
+
+        <!-- Case Study Showcase Card -->
+        <div class="case-study-showcase-card">
+
+          <!-- Left Column: Full-Height Visual -->
+          <div class="case-study-img-col">
+            <img src="assets/images/compliance/p33.jpg"
+              alt="Commercial refrigeration automated telemetry server and compliance monitoring" width="800"
+              height="650" loading="lazy">
+          </div>
+
+          <!-- Right Column: 3 Editorial Sections with Orange Accent Bars -->
+          <div class="case-study-content-col">
+
+            <!-- Item 1: The Problem -->
+            <article class="case-study-item">
+              <h3 class="case-study-item-title">THE PROBLEM</h3>
+              <p class="case-study-item-desc">
+                A 40,000 sq ft regional grocery supermarket in North Hills operated 32 aging display cases and walk-in
+                freezers without continuous temperature telemetry. Manual clipboard logs resulted in missed excursions,
+                inventory risk, and recurring health audit warnings.
+              </p>
+            </article>
+
+            <!-- Item 2: What We Did -->
+            <article class="case-study-item">
+              <h3 class="case-study-item-title">WHAT WE DID</h3>
+              <p class="case-study-item-desc">
+                We retrofitted the facility with wireless NIST-calibrated IoT probes, integrated sub-second suction
+                pressure telemetry, and configured automated cloud ledger synchronization for every critical zone—all
+                executed overnight with zero store downtime.
+              </p>
+            </article>
+
+            <!-- Item 3: The Result -->
+            <article class="case-study-item">
+              <h3 class="case-study-item-title">THE RESULT</h3>
+              <p class="case-study-item-desc">
+                New multi-deck display cases, a centralized digital dashboard, and automated alarm triggers. 100% FDA 21
+                CFR Part 11 and HACCP compliance logs, instant 30-second inspection dossiers, and zero inventory loss
+                across 36 consecutive months.
+              </p>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: COMPLIANCE MATRIX (#complianceMatrix)
+         3-Card Cinematic Visual Matrix (Matching User Reference Architecture)
+         Full-Cover Imagery, Top Orange Numeric Badges (01, 02, 03), Teal Accents & Metric Pills
+    ========================================================================== -->
+    <section class="compliance-matrix-section" id="complianceMatrix">
+      <div class="section-container">
+
+        <div class="section-title-wrap text-center" style="margin-bottom: 3rem;">
+          <span class="section-kicker">CRITICAL TEMPERATURE LIMITS</span>
+          <h2 class="section-heading">Multi-Zone Thermal Compliance Architecture</h2>
+          <p class="section-desc">Standardized target ranges and automated excursion fail-safes calibrated by certified
+            master refrigeration engineers.</p>
+        </div>
+
+        <div class="matrix-cinematic-grid">
+
+          <!-- Zone 1: Cryogenic & Pharma Ultra-Cold -->
+          <article class="matrix-cinematic-card">
+            <img src="assets/images/compliance/p34.jpg"
+              alt="Ultra-low cryogenic refrigeration storage chamber for pharmaceuticals" width="600" height="420"
+              loading="lazy">
+            <div class="matrix-cinematic-overlay">
+              <div class="matrix-orange-idx">01</div>
+              <div class="matrix-cinematic-content">
+                <span class="matrix-teal-bar"></span>
+                <h3 class="matrix-cinematic-title">Pharma &amp; Biological Vaults</h3>
+                <div class="matrix-metric-pill">
+                  <span>-80&deg;C to -40&deg;C &bull; FDA 21 CFR 11 NIST</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Zone 2: Commercial Walk-In Deep Freezers -->
+          <article class="matrix-cinematic-card">
+            <img src="assets/images/services/p35.jpg" alt="Commercial walk-in deep freezer compliance chamber"
+              width="600" height="420" loading="lazy">
+            <div class="matrix-cinematic-overlay">
+              <div class="matrix-orange-idx">02</div>
+              <div class="matrix-cinematic-content">
+                <span class="matrix-teal-bar"></span>
+                <h3 class="matrix-cinematic-title">Commercial Food Deep Freeze</h3>
+                <div class="matrix-metric-pill">
+                  <span>-28&deg;C to -18&deg;C &bull; Low-GWP CO2 / R-448A</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Zone 3: Controlled Fresh Produce & Dairy Chill -->
+          <article class="matrix-cinematic-card">
+            <img src="assets/images/products/p36.jpg"
+              alt="Controlled commercial fresh produce and supermarket refrigeration zone" width="600" height="420"
+              loading="lazy">
+            <div class="matrix-cinematic-overlay">
+              <div class="matrix-orange-idx">03</div>
+              <div class="matrix-cinematic-content">
+                <span class="matrix-teal-bar"></span>
+                <h3 class="matrix-cinematic-title">Produce &amp; Dairy Distribution</h3>
+                <div class="matrix-metric-pill">
+                  <span>+1&deg;C to +4&deg;C &bull; HACCP CCP-1 Precision</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: COMPLIANCE CTA (#complianceCTA)
+         Unique layout: High-tech dual-accent audit assessment card with verification badges
+    ========================================================================== -->
+    <section class="compliance-cta-section" id="complianceCTA">
+      <div class="section-container">
+
+        <div class="comp-cta-card">
+          <div class="comp-cta-content">
+            <span class="cta-kicker">EXECUTIVE AUDIT CONSULTATION</span>
+            <h2 class="comp-cta-heading">Guarantee 100% Audit Readiness Across All Facilities</h2>
+            <p class="comp-cta-desc">Eliminate citation risks, reduce product spoilage, and automate regulatory
+              reporting with ArcticPro's NIST-traceable telemetry and master refrigeration technicians.</p>
+
+            <div class="comp-cta-badges">
+              <div class="badge-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>NIST-Calibrated Probes</span>
+              </div>
+              <div class="badge-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Zero Violation Guarantee</span>
+              </div>
+              <div class="badge-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>24/7 Rapid Emergency Dispatch</span>
+              </div>
+            </div>
+
+            <div class="comp-cta-actions">
+              <a href="#siteFooter" class="btn-primary-action btn-large">
+                <span>Book Compliance Assessment</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+              <a href="dashboard.html" class="btn-secondary-action btn-large">
+                <span>Launch Client Telemetry</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                  <polyline points="10 17 15 12 10 7"></polyline>
+                  <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       SHARED FOOTER (Editorial & Technical Precision)
+       ====================================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+
+        <!-- Brand & Description -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-link">
+            <img src="assets/images/icons/logo.png" alt="ArcticPro Logo" class="brand-logo-img">
+            <div class="brand-text-wrap">
+              <span class="brand-name" style="color: #ffffff;">Arctic<span
+                  style="color: var(--brand-blue);">Pro</span></span>
+              <span class="brand-sub" style="color: #94a3b8;">Commercial Refrigeration</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            NIST-traceable IoT temperature monitoring, FDA 21 CFR Part 11 electronic records, and EPA Section 608
+            compliance engineered for zero downtime.
+          </p>
+          <div class="footer-telemetry-badge">
+            <span class="telemetry-pulse"></span>
+            <span>24/7 DISPATCH READY: ACTIVE</span>
+          </div>
+          <div class="footer-social-links" aria-label="ArcticPro Social Channels">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="X (formerly Twitter)" title="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn"
+              aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM9.75 15.02V8.98L15 12l-5.25 3.02z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h2 class="footer-heading">Navigation</h2>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home 1 (Installation)</a></li>
+            <li><a href="home-2.html">Home 2 (24/7 Service)</a></li>
+            <li><a href="services.html">Services &amp; Installation</a></li>
+            <li><a href="about.html">About ArcticPro</a></li>
+            <li><a href="compliance.html" class="active">Compliance Monitoring</a></li>
+            <li><a href="#siteFooter">Emergency Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Compliance & Regulatory -->
+        <div>
+          <h2 class="footer-heading">Compliance Protocols</h2>
+          <ul class="footer-nav-list">
+            <li><a href="compliance.html#regulatoryProtocols">FDA 21 CFR Part 11</a></li>
+            <li><a href="compliance.html#regulatoryProtocols">HACCP CCP-1 Logging</a></li>
+            <li><a href="compliance.html#regulatoryProtocols">EPA Section 608 Mandate</a></li>
+            <li><a href="compliance.html#complianceMatrix">Ultra-Low Cryo Storage</a></li>
+            <li><a href="compliance.html#complianceMatrix">Deep Freeze Guidelines</a></li>
+            <li><a href="dashboard.html">Client Audit Logs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Emergency Dispatch -->
+        <div>
+          <h2 class="footer-heading">Emergency Hotline</h2>
+          <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+1 (800) 482-COLD</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>dispatch@arcticpro-refrig.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>440 Commerce Parkway, Sector 9</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <span>&copy; 2026 ArcticPro Commercial Refrigeration Inc. All rights reserved.</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="compliance.html">HACCP &amp; EPA Compliance</a>
+          <span class="footer-link-divider" aria-hidden="true">&bull;</span>
+          <a href="contact.html">Privacy &amp; Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-Top Button -->
+  <button class="scroll-top" id="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
