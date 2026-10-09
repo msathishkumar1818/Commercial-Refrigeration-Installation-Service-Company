@@ -98,8 +98,7 @@
       <!-- Header Action Controls: RTL, Dark Mode, Direct Login -->
       <div class="header-actions">
         <!-- RTL Toggle -->
-        <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR"
-          title="Toggle RTL / LTR">
+        <button type="button" class="control-btn rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle text direction RTL/LTR">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" aria-hidden="true">
             <polyline points="16 3 21 8 16 13"></polyline>
@@ -107,11 +106,11 @@
             <polyline points="8 21 3 16 8 11"></polyline>
             <line x1="3" y1="16" x2="15" y2="16"></line>
           </svg>
+          <span class="rtl-text-indicator">RTL</span>
         </button>
 
         <!-- Dark Mode Toggle -->
-        <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle dark mode"
-          title="Toggle Dark/Light Mode">
+        <button type="button" class="control-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark mode">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="5"></circle>
@@ -127,14 +126,14 @@
         </button>
 
         <!-- Client Portal Login -->
-        <a href="login.html" class="control-btn" id="headerLoginBtn" aria-label="Client Portal Login"
-          title="Client Portal Login">
+        <a href="login.html" class="btn-login" id="headerLoginBtn" aria-label="Client Portal Login">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" aria-hidden="true">
             <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
             <polyline points="10 17 15 12 10 7"></polyline>
             <line x1="15" y1="12" x2="3" y2="12"></line>
           </svg>
+          <span>Login</span>
         </a>
 
         <!-- Commercial Refrigeration Service CTA Button (Visible on Desktop, Hidden on Mobile Header) -->

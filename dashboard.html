@@ -70,14 +70,12 @@
         </a>
 
         <!-- RTL Toggle -->
-        <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR"
-          title="Toggle RTL/LTR">
-          <span style="font-size: 0.75rem; font-weight: 800;">RTL</span>
+        <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <span class="rtl-text-indicator">RTL</span>
         </button>
 
         <!-- Dark / Light Mode Toggle -->
-        <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle color theme"
-          title="Toggle Dark/Light Mode">
+        <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle color theme">
           <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -476,7 +474,7 @@
         </div>
 
         <div class="dash-card-widget" style="max-width: 780px;">
-          <form id="scheduleVisitForm">
+          <form id="scheduleVisitForm" class="inquiry-form">
             <div class="form-row-duo">
               <div class="form-field">
                 <label for="schedFacility" class="form-label">Client Facility</label>
@@ -486,11 +484,11 @@
               <div class="form-field">
                 <label for="schedSystem" class="form-label">System Type</label>
                 <select id="schedSystem" class="form-select" required>
-                  <option value="supermarket-rack">Supermarket Parallel Compressor Rack</option>
-                  <option value="walk-in-cooler">Walk-In Cold Storage Cooler</option>
-                  <option value="walk-in-freezer">Walk-In Commercial Deep Freezer</option>
-                  <option value="display-cases">Retail Glass Merchandiser Cases</option>
-                  <option value="iot-telemetry">IoT Temperature Probe Array</option>
+                  <option value="supermarket-rack">Supermarket Parallel Rack</option>
+                  <option value="walk-in-cooler">Walk-In Cooler</option>
+                  <option value="walk-in-freezer">Walk-In Deep Freezer</option>
+                  <option value="display-cases">Retail Merchandiser Cases</option>
+                  <option value="iot-telemetry">IoT Probe Array</option>
                 </select>
               </div>
             </div>
@@ -503,9 +501,9 @@
               <div class="form-field">
                 <label for="schedTime" class="form-label">Preferred Window</label>
                 <select id="schedTime" class="form-select" required>
-                  <option value="morning">Morning (08:00 AM - 12:00 PM)</option>
-                  <option value="afternoon">Afternoon (12:00 PM - 04:00 PM)</option>
-                  <option value="evening">After Hours / Night (08:00 PM - 02:00 AM)</option>
+                  <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                  <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                  <option value="evening">After Hours (8:00 PM - 2:00 AM)</option>
                 </select>
               </div>
             </div>

@@ -75,6 +75,10 @@ function initRtl() {
   const applyDirection = (dir) => {
     document.documentElement.dir = dir;
     localStorage.setItem('arctic_dir', dir);
+    // Update all RTL/LTR text indicators dynamically
+    document.querySelectorAll('.rtl-text-indicator').forEach((el) => {
+      el.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+    });
   };
 
   applyDirection(savedDir);

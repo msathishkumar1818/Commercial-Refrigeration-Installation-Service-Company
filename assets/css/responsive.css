@@ -32,8 +32,10 @@
     display: inline-flex !important;
   }
 
-  .header-actions .control-btn {
-    display: none; /* Move to mobile drawer for clean single-line header */
+  .header-actions .control-btn,
+  .header-actions .btn-login,
+  .header-actions .btn-header-cta {
+    display: none !important; /* Move to mobile drawer for clean single-line header */
   }
 
   .site-header .btn-header-cta {
@@ -304,12 +306,14 @@
 }
 
 /* Large Screens & Ultra-Wide: Keep container locked strictly to unified max-width */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1201px) {
   .header-container,
   .footer-container,
   .section-container {
     max-width: var(--site-container-max, 1200px);
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -1496,8 +1500,8 @@
    CONTACT PAGE RESPONSIVE ADAPTATIONS (contact.html)
    ========================================================================= */
 
-/* Breakpoint: <= 1024px (iPad Pro, Tablet Landscape) */
-@media screen and (max-width: 1024px) {
+/* Breakpoint: <= 1100px (iPad Pro 13 1032px, iPad Pro, Tablet Landscape) */
+@media screen and (max-width: 1100px) {
   .contact-hero-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
